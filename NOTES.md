@@ -17,24 +17,34 @@
   * [Download](http://git-scm.com/download)
 
 * Verify java installation
-```$ java -version```
-```java version "1.7.0_60"
+
+``$ java -version``
+
+```
+java version "1.7.0_60"
 Java(TM) SE Runtime Environment (build 1.7.0_60-b19)
 Java HotSpot(TM) 64-Bit Server VM (build 24.60-b09, mixed mode)
-``
+```
 
 * Verify maven installation
-```$ mvn -version```
-```Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 2014-02-14T09:37:52-08:00)
+
+``$ mvn -version``
+
+```
+Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 2014-02-14T09:37:52-08:00)
 Maven home: /usr/local/Cellar/maven/3.2.1/libexec
 Java version: 1.6.0_65, vendor: Apple Inc.
 Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 Default locale: en_US, platform encoding: MacRoman
 OS name: "mac os x", version: "10.9.3", arch: "x86_64", family: "mac"
 ```
+
 * Verify GIT installation
-```$ git --version```
-```git version 2.0.0```
+
+```
+$ git --version
+git version 2.0.0
+```
 
 * Verify Eclipse Installation
   * Start Eclipse
@@ -46,6 +56,7 @@ OS name: "mac os x", version: "10.9.3", arch: "x86_64", family: "mac"
 * Explain the Java Development Workflow
 * [](http://www.oracle.com/technetwork/topics/newtojava/downloads/index.html)
 * Write Hello World java application with no tools (Requires: text editor)
+
 ```
 mkdir scratch
 cd scratch/
@@ -227,16 +238,17 @@ java -verbose -cp ./src HelloWorld
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
 * The order is read from a JSON file
-* An ```Order``` object from the read data 
-* The ```OrderManager``` ```process```es the order as follows:
-  * Tests that the items are in stock in a database by calling the ```InventoryManager```'s ```stockLevel(productId)``` 
+* An ``Order`` object from the read data 
+* The ``OrderManager`` ``process``es the order as follows:
+  * Tests that the items are in stock in a database by calling the ``InventoryManager``'s ``stockLevel(productId)`` 
   * If the stock on hand is >= the required quantity for the line item then
-    * Decrements the stock level by calling the ```InventoryManager```'s ```decrementStock(productId)``` 
-  * Otherwise it marks the ```LineItem``` as out_of_stock  
+    * Decrements the stock level by calling the ``InventoryManager``'s ``decrementStock(productId)`` 
+  * Otherwise it marks the ``LineItem`` as out_of_stock  
 * Once the order and all the line items have been processed:
-* The ```Order``` is passed to the ```ReceiptPrinter``` and a nicely formatted reciept is printed
+* The ``Order`` is passed to the ``ReceiptPrinter`` and a nicely formatted reciept is printed
 
 ##Sample Input
+
 ```
 {
 "timestamp":"20140709194738",
@@ -251,13 +263,12 @@ When you have completed all phases you will have a Java Application which perfor
 ```
 
 ##Sample Output
+
 ```
 Bob Williams (Y18123AS)
 San Francisco (42)
 July 9th, 2014
  ----------------
-
-
 ```
 
 
@@ -265,24 +276,24 @@ July 9th, 2014
 
 ##Final Project Breakdown (Phases)
   * Phase 1: Read in a hardcoded JSON file (as text) and output the raw contents to STDOUT
-  * Test Phase 1: How could we test this? - Class discussion - Suggestion create a ```generateReceipt``` method  which takes an ```InputStream``` and an ```OutputStream``` performs the task and write a test for that
+  * Test Phase 1: How could we test this? - Class discussion - Suggestion create a ``generateReceipt`` method  which takes an ``InputStream`` and an ``OutputStream`` performs the task and write a test for that
   
   * Phase 2: Update the app to write the contents of the input file to a hard coded receipt file
   * Test Phase 2: How could we test this? - Class discussion
   
   * Phase 3: Update the app to extract the file names from the command line invokeation and display an usage / error message if the usage is incorrect
-  * Test Phase 3: How could we test this? - Suggestion: Refactor code into a ```CommandLineParser``` to populate a ```JobConfigurationBean``` with ```orderFilename``` and ```recieptFilename``` and write tests for that.
+  * Test Phase 3: How could we test this? - Suggestion: Refactor code into a ``CommandLineParser`` to populate a ``JobConfigurationBean`` with ``orderFilename`` and ``recieptFilename`` and write tests for that.
   
   * Phase 4: Update the app to display error messages if the relevant files cannot be written or read
-  * Test Phase 4: How could we test this? - Suggestion: Code a  ```Logger``` interface and `SimpleLogger` class implementation that writes to STDOUT or STDERR. Refactor ```generateReceipt``` to get the logger to use from teh ```JobConfigurationBean``` and write tests which invoke ```generateReceipt``` with various ```JobConfigurationBean``` 
+  * Test Phase 4: How could we test this? - Suggestion: Code a  ``Logger`` interface and ``SimpleLogger`` class implementation that writes to STDOUT or STDERR. Refactor ``generateReceipt`` to get the logger to use from teh ``JobConfigurationBean`` and write tests which invoke ``generateReceipt`` with various ``JobConfigurationBean`` 
   
-  * Phase 5: Update the app to parse the JSON into ```org.json.JSONObject```s and output the results for toString on these objects to the output file
-  * Test Phase 5: How can we test this? - Suggestion: Refactor code into a ```OrderFileParser``` which has the single responsibility of converting a json text ```InputStream``` into ```JSONObject```s.
+  * Phase 5: Update the app to parse the JSON into ``org.json.JSONObject``s and output the results for toString on these objects to the output file
+  * Test Phase 5: How can we test this? - Suggestion: Refactor code into a ``OrderFileParser`` which has the single responsibility of converting a json text ``InputStream`` into ``JSONObject``s.
   
-  * Phase 6: Create JavaBean Classes to represent each of ```Order```, ```Customer```, ```StoreInfo```, ```LineItem```, ```Product```
-  * Test Phase 6: How can we test this? - Suggestion: Write tests for the to ensure they have working getters and setters for all the fields we want to read from the JSON. For example ```Order``` should have fields for ```customer```, ```storeInfo```, ```lineItems```. ```LineItem``` should have ```product``` and ```quantity```
+  * Phase 6: Create JavaBean Classes to represent each of ``Order``, ``Customer``, ``StoreInfo``, ``LineItem``, ``Product``
+  * Test Phase 6: How can we test this? - Suggestion: Write tests for the to ensure they have working getters and setters for all the fields we want to read from the JSON. For example ``Order`` should have fields for ``customer``, ``storeInfo``, ``lineItems``. ``LineItem`` should have ``product`` and ``quantity``
   
-  * Phase 7: Create an ```OrderFactory``` with a method which takes a populated  ```JSONObject``` as a parameter and returns a correctly populated instance of the ```Order``` JavaBean defined in the previous phase. The JSON objects in the sample file 
+  * Phase 7: Create an ``OrderFactory`` with a method which takes a populated  ``JSONObject`` as a parameter and returns a correctly populated instance of the ``Order`` JavaBean defined in the previous phase. The JSON objects in the sample file 
   * Test Phase 7: How can we test this?
   
 
