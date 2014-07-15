@@ -143,7 +143,7 @@ java -verbose -cp ./src HelloWorld
 * [Formatter](http://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax)
 
 ####Exercise
-* __EXERCISE:__ In your main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
+* __EXERCISE:__ Create a new folder called ``datatypes`` and a main application class called ``DataTypeApp``. Put the ``DataTypeApp`` in an appropriate ``package``. In DataTypeApp.main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
 
 ###Expressions, Statements and Blocks
 * Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html) 
@@ -152,10 +152,24 @@ java -verbose -cp ./src HelloWorld
 * Blocks - a group of zero or more statements, hint at scope
 
 ###Operators
-* [Operators](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
+Eclipse will show warnings and errors as you type, pay attention to them to learn how to use these operators
+
+* The Arithmetic Operators
+* __EXERCISE:__ Create a new folder called ``operators`` with a class called ``OperatorsApp`` in an appropriate package. For each of the Arithmetic operators ``+``,``-``,``/``,``%``,``++``,``--`` write an example usage and print out the results. Ensure that your app describes the difference between prefix and postfix ``--/++``. 
+
+* The Equality and Relational Operators
+* __EXERCISE:__ Create a new app any way you wish. In the main method, write an example expression for each of these operators which prints something out:
+  * ==      equal to
+  * !=      not equal to
+  * &gt;       greater than
+  * &gt;=      greater than or equal to
+  * <       less than
+  * <=      less than or equal to
+What data type do these expressions return?
+
 
 ###Random Number Generator Code Sample
-This code is used in the next examples, we'll learn what all the pieces do later, for now 
+This code is used in the next examples, we'll learn what all the pieces do later, for now just use this code in your exercises
 
 ```
 Random random = new java.util.Random();
