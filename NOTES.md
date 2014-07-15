@@ -54,30 +54,58 @@ git version 2.0.0
 
 ##Java Development Skills
 * Explain the Java Development Workflow
+  * ``.java`` File
+  * ``javac``
+  * Compile-Time ``CLASSPATH``
+  * ``.class`` file 
+  * ``java``
+  * Run-Time ``CLASSPATH``
+  * Hello World!
+  
 * [](http://www.oracle.com/technetwork/topics/newtojava/downloads/index.html)
 * Write Hello World java application with no tools (Requires: text editor)
 
+__EXERCISE:__ Create projects folder
+
 ```
+mkdir projects
+cd projects
+```
+
+__EXERCISE:__ Create a HelloWorld Java Application
+
+```
+cd projects
 mkdir scratch
 cd scratch/
 mkdir src
 vi src/HelloWorld.java
 ```
+
+* ``public static void`` - Access Modifiers
+* ``main``
+* ``String[] args``
+* ``System.out.println()``
 * Compile your application (Requires: javac from the JDK) (javac -verbose HelloWorld.java)
+
 ```
 javac src/HelloWorld.java 
 ```
 * Run your Application (Requires: java from JRE)
+
 ```
 java -cp ./src HelloWorld
 ```
-* -verbose option:
+* ``-verbose`` option:
+
 ```
 javac -verbose src/HelloWorld.java 
 java -verbose -cp ./src HelloWorld
 ``` 
-* [PATH and CLASS_PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html) 
 
+* ``-d`` option
+
+* [Intro CLASS_PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html) 
 
 ##Java Platform Basics
 * JDK - [Java Development Kit](http://en.wikipedia.org/wiki/Java_Development_Kit) (Tools)
@@ -86,28 +114,90 @@ java -verbose -cp ./src HelloWorld
 
 ##Java Build Tools - Maven
 * Generate a template application with Maven (App + AppTest)
+  * ``mvn archetype:generate`` 
 * Use Maven to Build and Package a Java Application
 * Use Maven to run JUnit Unit Tests for your code
 * Import a maven project into Eclipse (Requires: Maven Integration for Eclipse)
-* Know how to use Eclipse to develop Java Applications
 
 ##Java Language Skills
-* Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html)  
-* Understand and use [Class Methods (static)]
+###Class Methods
+* Understand and use [Class Methods (static) esp. main]
+  * No instance needed 
+  * ``String[] args``
+  * ``System.out.println()``
+  * ``public static void`` - Access Modifiers
+  
+###Packages  
+* Understand [Java Packages](http://docs.oracle.com/javase/tutorial/java/package/packages.html) ~ Namespace and Folder Name
+* __EXERCISE:__ Move your HelloWorld class to a package using eclipse
+
+###Data Types
 * Understand and use [Java Data Types](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
-* Understand and use [Object References](http://docs.oracle.com/javase/tutorial/java/data/index.html)
-* Understand and use Comments rest-of-line, in-line and javadoc
+
+###Local Variables
 * Understand and use [Local Variables](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html)
+* Variable initialization rules
+
+###Printing Out Values
+* [System.out.printf](http://www.java2s.com/Code/JavaAPI/java.lang/System.out.printf.htm)
+* [Formatter](http://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax)
+
+###Exercise
+* __EXERCISE:__ In your main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
+
+###Expressions, Statements and Blocks
+* Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html) 
+* Expression - evaluates to a value
+* Statement - (expression, declaration or control flow)
+* Blocks - a group of zero or more statements, hint at scope
+
+###Operators
+* [Operators](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
+
+###Random Number Generator Code Sample
+This code is used in the next examples, we'll learn what all the pieces do later, for now 
+
+```
+Random random = new java.util.Random();
+int randomIntBetween1and100 = random.nextInt(100);
+```
+
+###Control Flow 
+* [if](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html) 
+
+###Exercise
+* __EXERCISE:__ Write an application which generates 
+
+
+* [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
+
+
+
+###Array Usage
 * Understand [Java Array](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html) behaviour
+
+* Use Loops
+
+  * [while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
+  * [for loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
+  * [for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
+
 * Know how to instantiate and use Java Objects such as [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html)
-* Control Flow [if](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html) and [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
-* Loops [while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) and [for](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
+
+* Understand and use [Object References](http://docs.oracle.com/javase/tutorial/java/data/index.html)
+
+* Understand and use Comments rest-of-line, in-line (and javadoc later)
+
 * Understand Java Exceptions and [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
+
 * Understand argument passing and method invokation
   * Everything is passed by value, the value passed is either a primitive data type or an __object reference__
   * Objects themselves are always stored in the heap, and we only ever have a reference to that space
+
 * Understand and Use [Streams IO](http://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+
 * Understand and Use [Java 6 File IO](http://www.mkyong.com/tutorials/java-io-tutorials/)
+    
     
 
 ##Java Platform Differences
@@ -121,11 +211,16 @@ java -verbose -cp ./src HelloWorld
  
 ##Eclipse Skills 
 * Know to use Eclipse effectively, including how to:
-  * Configure Project Settings
-  * Consistently Format Code
   * Run or Debug your code
   * Set Debug Breakpoints
   * View and edit runtime variable values
+  * Configure Project Settings
+  * Select a JRE
+  * Consistently Format Code
+  * Clean up!
+  * Refactor
+    * Get/Setter
+    * Extract...
   
 ##OO Principals in Platform Libraries
 * Understand some Object Oriented Principles wrt built in Classes
@@ -135,7 +230,7 @@ java -verbose -cp ./src HelloWorld
   * Understand Polymorphism (Streams)
   
    
-##Writing YOur Own Java Classes   
+##Writing Your Own Java Classes   
 * Know how to write Java Classes
   * Constructors
     * super
@@ -157,10 +252,12 @@ java -verbose -cp ./src HelloWorld
   * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
 * Understand Abstract Classes and how to define them
 
-##Throwing Exceptions
-* Understand How and When to Throw exceptions
-  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
-  * Checked vs Unchecked Exceptions 
+##Scope
+* Understand variable scope - com.skillbox.boxes.scope.ScopeExample
+* Understand variable shadowing
+  
+##Arrays and Array
+* [Arrays](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html)
   
 ##The Java Collections Framework and Generics
 * [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
@@ -168,15 +265,18 @@ java -verbose -cp ./src HelloWorld
 * Using Generics in your own classes
   * [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
 
-##Topics
-* [IO / NIO differences](http://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
+
+##Throwing Exceptions
+* Understand How and When to Throw exceptions
+  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
+  * Checked vs Unchecked Exceptions 
+  
+  
+##Additional Topics
 * [Auto-boxing and Unboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
-* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) and [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
 * [Math](http://docs.oracle.com/javase/tutorial/java/data/beyondmath.html)
 * [hashCode and equals](http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#hashCode) (Use Eclipse)
 * [Enumerations](http://docs.oracle.com/javase/6/docs/api/java/util/StringTokenizer.html) (StringTokenizer)
-* [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
-  * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
 
 ##Advanced Debugging
 * Debug to a _remote_(local) application using Java Platform Debugger Architecture (JPDA) from Eclipse
@@ -192,9 +292,8 @@ java -verbose -cp ./src HelloWorld
   
 ###JDBC Project
 * A project which reads a CSV File from disk and imports some of the data into a database
+* [DataSource](http://docs.oracle.com/javase/6/docs/api/javax/sql/DataSource.html)
 * When the file is imported a second time existing records are updated and new records are added
-
-##(Bonus)CSV Files
 * [OpenCSV](http://viralpatel.net/blogs/java-read-write-csv-file/)
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
 
@@ -206,8 +305,17 @@ java -verbose -cp ./src HelloWorld
 * [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
 * Strings in Switch were only added in java 7 :(
 
+##(BOnus)Networking
+* [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
+  * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
+
+##(Bonus)Locale
+
 ##(Bonus)Logging API
 * See boxes/jsonweather
+
+##(Bonus)Annotations
+* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) and [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
 
 ##(Bonus)Java Thread Locks
 * Java Processes
@@ -234,6 +342,11 @@ java -verbose -cp ./src HelloWorld
 ##(Bonus)Environment
 * [Properties](http://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
 * [System Properties](http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
+
+##(Bonus) NIO/IO Java 7
+* [IO / NIO differences](http://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
+
+
 
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
