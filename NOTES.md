@@ -122,7 +122,7 @@ java -verbose -cp ./src HelloWorld
 ##Java Language Skills
 ###Class Methods
 * Understand and use [Class Methods (static) esp. main]
-  * No instance needed 
+  * No instance needed - We'll get to Instance Methods later
   * ``String[] args``
   * ``System.out.println()``
   * ``public static void`` - Access Modifiers
@@ -142,7 +142,7 @@ java -verbose -cp ./src HelloWorld
 * [System.out.printf](http://www.java2s.com/Code/JavaAPI/java.lang/System.out.printf.htm)
 * [Formatter](http://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax)
 
-###Exercise
+####Exercise
 * __EXERCISE:__ In your main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
 
 ###Expressions, Statements and Blocks
@@ -159,30 +159,58 @@ This code is used in the next examples, we'll learn what all the pieces do later
 
 ```
 Random random = new java.util.Random();
-int randomIntBetween1and100 = random.nextInt(100);
+int randomIntBetween0and99 = random.nextInt(100);
+/*
+nextInt(int n)
+Returns a pseudorandom, uniformly distributed int value between 0 (inclusive) and the specified value (exclusive), drawn from this random number generator's sequence.
+*/
 ```
 
 ###Control Flow 
 * [if](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html) 
 
-###Exercise
-* __EXERCISE:__ Write an application which generates 
-
+####Exercise
+* __EXERCISE:__ Write an application which prints HEADS 50% of the time and TAILS 50% of the time to the console and exits
 
 * [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
 
-
+####Exercise
+* __EXERCISE:__ Write an application called ``LuckyDay`` which randomly selects a number between 0 and 6 (inclusive) and uses a ``switch`` statement to print out a day of the week in the format "This week, 'Wednesday' is your lucky day!". Where the day of the week printed is determined by the random number (Sunday is 0..Saturday is 6) 
 
 ###Array Usage
-* Understand [Java Array](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html) behaviour
+* Understand [Java Array Usage](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+* Allocate an array with the literal syntax
+* Assign and access individual elements in the array
+ 
+####Exercise
+* __EXERCISE:__ Re-write the ``LuckyDay`` application to use an array
 
-* Use Loops
+##Use Loops
+###[while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
 
-  * [while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
-  * [for loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
-  * [for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
+####Exercise
+* __EXERCISE:__ Write an application called ``HighRoller`` which utilizes one of these loop types to count the number of dice rolls required to reach ``25``. Each dice roll is a random number between ``1`` and ``6`` inclusive. At the end, print out, the total score and how many rolls it took. If the player rolls exactly ``25`` then print out the special message ``YOU ARE A HIGH ROLLER!!!``
 
-* Know how to instantiate and use Java Objects such as [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html)
+###[for loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
+
+####Exercise
+* __EXERCISE:__ Write an application called ``RandomArrayer``. The application should generate a random number between ``10`` and ``20`` (inclusive). Then allocate a new array of ``int``s. The use a for loop to assign each ``int`` in the array to a random number. Use [java.util.Arrays.sort()](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#sort%28int[]%29) to sort the array of ``int``s in ascending order and then another for loop to print out the numbers to the console
+  
+###[for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
+
+####Exercise
+* __EXERCISE:__ Rewrite one of the loops in e``RandomArrayer`` to use the for each loop syntax
+
+###Call other Static Methods
+* You don't need an instance to call static methods or access 
+* Explore [``Math``](http://docs.oracle.com/javase/6/docs/api/java/lang/Math.html)
+####Exercise
+* __EXERCISE:__ Refactor the 'print out array' loop of ``RandomArrayer`` into a separate function
+* __EXERCISE:__ Use the Math library to print out the area and circumference of a circle with a radius of ``5``units 
+
+###Java Objects
+* [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html) is a special case object in that you can use a literal notation ``"my string contents"`` and get an object reference
+* Know how to instantiate and use other Java Objects such as [StringBuffer]
 
 * Understand and use [Object References](http://docs.oracle.com/javase/tutorial/java/data/index.html)
 
@@ -253,8 +281,7 @@ int randomIntBetween1and100 = random.nextInt(100);
 * Understand Abstract Classes and how to define them
 
 ##Scope
-* Understand variable scope - com.skillbox.boxes.scope.ScopeExample
-* Understand variable shadowing
+* Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
   
 ##Arrays and Array
 * [Arrays](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html)
