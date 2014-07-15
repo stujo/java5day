@@ -279,6 +279,7 @@ Use Test Driven Development to help you with these refactoring tasks:
 * __EXERCISE:__ Refactor the 'sorting' statement ``RandomArrayer`` into a separate function - what would be a good return type/value?
 
 ##Java Koans
+A Testy way to learn Java....
 * [Java Koans](https://github.com/matyb/java-koans)     
 When you hit something we haven't covered we'll talk about it in class
 
@@ -295,17 +296,27 @@ When you hit something we haven't covered we'll talk about it in class
  
 ##Eclipse Skills 
 * Know to use Eclipse effectively, including how to:
-  * Run or Debug your code
-  * Set Debug Breakpoints
-  * View and edit runtime variable values
   * Configure Project Settings
   * Select a JRE
   * Consistently Format Code
   * Clean up!
   * Refactor
     * Get/Setter
-    * Extract...
+    * Extract...  
+  * [Tips](ECLIPSE.md)
+* Debugging
+  * Run or Debug your code
+  * Set Debug Breakpoints
+  * View and edit runtime variable values
+  * Debug Your Tests
+* Code Coverage
+  * Install [Eclemma](http://www.eclemma.org/) 
+  * Run your tests with coverage as...
+* Profiles
+  * Shared Java Formatting Profiles 
+  * Always Format the same way to minimize conflicts
   
+   
 ##OO Principals in Platform Libraries
 ###OO Overview
 * [Overview](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
