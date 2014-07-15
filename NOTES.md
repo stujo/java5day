@@ -120,38 +120,38 @@ java -verbose -cp ./src HelloWorld
 * Import a maven project into Eclipse (Requires: Maven Integration for Eclipse)
 
 ##Java Language Skills
-###Class Methods
+###Class Methods (Java Language)
 * Understand and use [Class Methods (static) esp. main]
   * No instance needed - We'll get to Instance Methods later
   * ``String[] args``
   * ``System.out.println()``
   * ``public static void`` - Access Modifiers
   
-###Packages  
+###Packages (Java Language)
 * Understand [Java Packages](http://docs.oracle.com/javase/tutorial/java/package/packages.html) ~ Namespace and Folder Name
 * __EXERCISE:__ Move your HelloWorld class to a package using eclipse
 
-###Data Types
+###Data Types (Java Language)
 * Understand and use [Java Data Types](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 
-###Local Variables
+###Local Variables (Java Language)
 * Understand and use [Local Variables](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html)
 * Variable initialization rules
 
-###Printing Out Values
+###Printing Out Values (Java Platform)
 * [System.out.printf](http://www.java2s.com/Code/JavaAPI/java.lang/System.out.printf.htm)
 * [Formatter](http://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax)
 
 ####Exercise
 * __EXERCISE:__ Create a new folder called ``datatypes`` and a main application class called ``DataTypeApp``. Put the ``DataTypeApp`` in an appropriate ``package``. In DataTypeApp.main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
 
-###Expressions, Statements and Blocks
+###Expressions, Statements and Blocks (Java Language)
 * Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html) 
 * Expression - evaluates to a value
 * Statement - (expression, declaration or control flow)
 * Blocks - a group of zero or more statements, hint at scope
 
-###Operators
+###Operators (Java Language)
 Eclipse will show warnings and errors as you type, pay attention to them to learn how to use these operators
 
 * The Arithmetic Operators
@@ -167,6 +167,8 @@ Eclipse will show warnings and errors as you type, pay attention to them to lear
   * <=      less than or equal to
 What data type do these expressions return?
 
+### Comments (Java Language)
+* Understand and use Comments rest-of-line, in-line (and javadoc later)
 
 ###Random Number Generator Code Sample
 This code is used in the next examples, we'll learn what all the pieces do later, for now just use this code in your exercises
@@ -180,60 +182,94 @@ Returns a pseudorandom, uniformly distributed int value between 0 (inclusive) an
 */
 ```
 
-###Control Flow 
-* [if](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html) 
+###if (Control Flow)
+Simplest Control flow if-then
+
+* [if](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
+* ``else``
+* ``else if``
+* Recommendation: Always use blocks
 
 ####Exercise
 * __EXERCISE:__ Write an application which prints HEADS 50% of the time and TAILS 50% of the time to the console and exits
 
+###switch (Control Flow)
 * [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
+* ``break``
+* ``default``
 
 ####Exercise
 * __EXERCISE:__ Write an application called ``LuckyDay`` which randomly selects a number between 0 and 6 (inclusive) and uses a ``switch`` statement to print out a day of the week in the format "This week, 'Wednesday' is your lucky day!". Where the day of the week printed is determined by the random number (Sunday is 0..Saturday is 6) 
 
-###Array Usage
+###Basic Arrays (Java Language)
 * Understand [Java Array Usage](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 * Allocate an array with the literal syntax
 * Assign and access individual elements in the array
+```
+int[] anArray = { 
+    100, 200, 300,
+    400, 500, 600, 
+    700, 800, 900, 1000
+};
+```
+* ``array.length``
+* ``System.arraycopy()``
  
 ####Exercise
 * __EXERCISE:__ Re-write the ``LuckyDay`` application to use an array
 
-##Use Loops
-###[while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
+###while (Control Flow)
+*[while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
 
 ####Exercise
 * __EXERCISE:__ Write an application called ``HighRoller`` which utilizes one of these loop types to count the number of dice rolls required to reach ``25``. Each dice roll is a random number between ``1`` and ``6`` inclusive. At the end, print out, the total score and how many rolls it took. If the player rolls exactly ``25`` then print out the special message ``YOU ARE A HIGH ROLLER!!!``
 
-###[for loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
+###for (Control Flow)
+* [for loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
+
+```
+for(int i=0; i < limit; i++)
+{
+}
+
+for(;;)
+{
+  // Runs forever :) and this is a comment
+}
+```
 
 ####Exercise
 * __EXERCISE:__ Write an application called ``RandomArrayer``. The application should generate a random number between ``10`` and ``20`` (inclusive). Then allocate a new array of ``int``s. The use a for loop to assign each ``int`` in the array to a random number. Use [java.util.Arrays.sort()](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#sort%28int[]%29) to sort the array of ``int``s in ascending order and then another for loop to print out the numbers to the console
   
-###[for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
+###for each (Control Flow)
+* [for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
 
 ####Exercise
-* __EXERCISE:__ Rewrite one of the loops in e``RandomArrayer`` to use the for each loop syntax
+* __EXERCISE:__ Rewrite one of the loops in ``RandomArrayer`` to use the for each loop syntax
 
-###Strings (Java Objects)
+###break in loops (Control Flow)
+* Shortcut exit
+
+##Java Platform Classes
+###Strings (Java Platform)
 * [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html) is a special case object in that you can use a literal notation ``"my string contents"`` and get an object reference
+* [StringBuilder](http://docs.oracle.com/javase/tutorial/java/data/buffers.html)
 
-###Review Calling Methods
-####Returning Values
+###Returning Values (Methods)
 * ``return`` 
 * void
 * types
-* Single Return Statement is preferred
+* Recommendation: Single Return Statement is preferred
 
-####Method Names
+###Method Names (Methods)
 * camelCase beginning with lowercase
 
-####Passing Parameters
+###Passing Parameters (Methods)
 * Understand argument passing and method invokation
   * Everything is passed by value, the value passed is either a primitive data type or an __object reference__
   * Objects themselves are always stored in the heap, and we only ever have a reference to that space
  
-####Class Methods
+###Class Methods (Methods)
 * You don't need to create an instance to call ``Class`` (static) methods
 * The instance of the ``Class`` is created when the bytecode is loaded by the ``ClassLoader``
 * ``Math.min(a,b);``
@@ -259,7 +295,7 @@ public class AppTest {
 ```
 
 
-####Instance Methods
+###Instance Methods (Methods)
 * If you have an Object Reference to an ``instanceof`` a ``Class`` you can call it's instance methods
 * ``String myString = "Contents of String";``
 * ``myString.contains(" of ");``
@@ -268,22 +304,24 @@ public class AppTest {
 * __EXERCISE:__ Use ``mvn archetype:generate`` and select ``maven-archetype-quickstart`` to generate and app template. In your ``App`` class write a class method called ``reverseUpperCase`` which takes a ``String`` parameter and uses some instance methods of the String class to return its contents in reversed UPPERCASE as a new ``String``. Call your ``reverseUpperCase`` method 5 times from your main method with some different arguments including "" and print out the results
 * __EXERCISE:__ Add a Test!
 
-###TDD - Test Driven Development
+
+
+##TDD - Test Driven Development
 * Red / Green / Refactor
 * Write Tests before coding or refactoring
 
-###Looking Back at RandomArrayer with TDD
+###Looking Back at RandomArrayer (TDD)
 ####Exercise
 Use Test Driven Development to help you with these refactoring tasks:
 * __EXERCISE:__ Refactor the 'print out array' loop of ``RandomArrayer`` into a separate function - what would be a good return type/value?
 * __EXERCISE:__ Refactor the 'sorting' statement ``RandomArrayer`` into a separate function - what would be a good return type/value?
 
-##Java Koans
+
+##Java Koans (General)
 A Testy way to learn Java....
 * [Java Koans](https://github.com/matyb/java-koans)     
 When you hit something we haven't covered we'll talk about it in class
 
------------
 
 ##Java Platform Differences
 * Know the difference between [JavaSE and JavaEE](http://docs.oracle.com/javaee/6/firstcup/doc/gkhoy.html)
@@ -295,29 +333,57 @@ When you hit something we haven't covered we'll talk about it in class
   * [JavaFX](http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html)
  
 ##Eclipse Skills 
-* Know to use Eclipse effectively, including how to:
-  * Configure Project Settings
-  * Select a JRE
-  * Consistently Format Code
-  * Clean up!
-  * Refactor
-    * Get/Setter
-    * Extract...  
-  * [Tips](ECLIPSE.md)
-* Debugging
-  * Run or Debug your code
-  * Set Debug Breakpoints
-  * View and edit runtime variable values
-  * Debug Your Tests
-* Code Coverage
-  * Install [Eclemma](http://www.eclemma.org/) 
-  * Run your tests with coverage as...
-* Profiles
-  * Shared Java Formatting Profiles 
-  * Always Format the same way to minimize conflicts
+###Using Eclipse Effectively (Tools)
+
+* Configure Project Settings
+* Select a JRE
+* Consistently Format Code
+* Clean up!
+* Refactor
+  * Get/Setter
+  * Extract...  
+* [Tips](ECLIPSE.md)
+
+###Debugging (Tools)
+
+* Run or Debug your code
+* Set Debug Breakpoints
+* View and edit runtime variable values
+* Debug Your Tests
+
+###Code Coverage (Tools)
+
+* Install [Eclemma](http://www.eclemma.org/) 
+* Run your tests with coverage as...
+
+###Profiles (Tools)
+
+* Shared Java Formatting Profiles 
+* Always Format the same way to minimize conflicts
   
+## More Java Platform Classes
+###Numbers (Java Platform)
+* For the built in numeric primitive data types we have [wrapper types](http://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
+
+####Exercise
+* __EXERCISE:__ Investigate how to convert "1.61803398875" into a double value
+* __EXERCISE:__ What is AutoBoxing and Unboxing? Write a method which uses it.
+
+####Review
+* [Autoboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
+
+
+###Command Line Arguments
+Enough hard coding! Let's read in some arguments
+
+* ``public static void main(String[] args)``
+* How can we access args?
+
+####Exercise
+* __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
+
    
-##OO Principals in Platform Libraries
+##OO Principals in Java
 ###OO Overview
 * [Overview](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
 [What Is an Object?](http://docs.oracle.com/javase/tutorial/java/concepts/object.html)
@@ -327,17 +393,17 @@ When you hit something we haven't covered we'll talk about it in class
 [What Is a Package?](http://docs.oracle.com/javase/tutorial/java/concepts/package.html)
 [What Is Composition?](http://javarevisited.blogspot.com/2013/06/why-favor-composition-over-inheritance-java-oops-design.html)
 ###OO In the Java Platform
-* Encapsulation (StringBuffer)
+* Encapsulation Use (StringBuffer) as example
 * The Java 6 Collection Types
 * Polymorphism (Streams)
  
 ----------------
 
-###Numbers (Java Objects)
-* For the built in numeric primitive data types we have [wrapper types](http://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
-* Understand and use [Object References](http://docs.oracle.com/javase/tutorial/java/data/index.html)
+###Objects (Java Objects)
+* ``new``
 * ``getClass()``
-* ``instancef of``
+* ``instanceof``
+
 ####Exercise
 * __EXERCISE:__ 
 
@@ -349,7 +415,6 @@ When you hit something we haven't covered we'll talk about it in class
 ---------------
 
 
-* Understand and use Comments rest-of-line, in-line (and javadoc later)
 
 * Understand Java Exceptions and [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 
@@ -357,16 +422,18 @@ When you hit something we haven't covered we'll talk about it in class
 
 * Understand and Use [Java 6 File IO](http://www.mkyong.com/tutorials/java-io-tutorials/)
     
-      
    
 ##Writing Your Own Java Classes   
-* Know how to write Java Classes
-  * Constructors
-    * super
-    * this
-  * Class Methods
-    * static
-  * Instance Methods
+Know how to write Usable Java Classes
+
+* Constructors
+  * super
+  * this
+* Class Methods and Class Variables
+  * ``static``
+* Instance Methods and Instance Variables
+  * non-``static``
+  * ``equals`` and ``hashCode``
   * Java Access Modifiers
  
 ##Class Inheritance in Java 
@@ -381,6 +448,9 @@ When you hit something we haven't covered we'll talk about it in class
   * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
 * Understand Abstract Classes and how to define them
 
+##Class
+* 
+
 ##Scope
 * Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
   
@@ -392,6 +462,10 @@ When you hit something we haven't covered we'll talk about it in class
 * [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
 * Using Generics in your own classes
   * [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
+
+
+####Exercise
+* __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 1 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
 
 ##Throwing Exceptions
