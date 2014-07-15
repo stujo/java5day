@@ -264,8 +264,11 @@ Use Test Driven Development to help you with these refactoring tasks:
 * __EXERCISE:__ Refactor the 'print out array' loop of ``RandomArrayer`` into a separate function - what would be a good return type/value?
 * __EXERCISE:__ Refactor the 'sorting' statement ``RandomArrayer`` into a separate function - what would be a good return type/value?
 
+##Java Koans
+* [Java Koans](https://github.com/matyb/java-koans)     
+When you hit something we haven't covered we'll talk about it in class
 
-    
+-----------
 
 ##Java Platform Differences
 * Know the difference between [JavaSE and JavaEE](http://docs.oracle.com/javaee/6/firstcup/doc/gkhoy.html)
@@ -299,10 +302,9 @@ Use Test Driven Development to help you with these refactoring tasks:
 [What Is a Package?](http://docs.oracle.com/javase/tutorial/java/concepts/package.html)
 [What Is Composition?](http://javarevisited.blogspot.com/2013/06/why-favor-composition-over-inheritance-java-oops-design.html)
 ###OO In the Java Platform
-* Understand some Object Oriented Principles wrt JavaSE Classes
-* Understand Encapsulation (StringBuffer)
-* Understand and use the Java 6 Collection Types
-* Understand Polymorphism (Streams)
+* Encapsulation (StringBuffer)
+* The Java 6 Collection Types
+* Polymorphism (Streams)
  
 ----------------
 
@@ -450,6 +452,12 @@ Use Test Driven Development to help you with these refactoring tasks:
 ##(Bonus)Regular Expressions
 * [Patterns](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)
 * [String#matches](http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#matches%28java.lang.String%29)
+
+##(Bonus)BigDecimal
+* [BigDecimal](http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html)
+* [Usage](http://www.javaworld.com/article/2075315/core-java/make-cents-with-bigdecimal.html)
+
+##(Bonus)Locale
 
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
