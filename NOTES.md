@@ -453,7 +453,7 @@ When you hit something we haven't covered we'll talk about it in class
 * Understand the following Object Oriented Concepts:
   * Abstraction
   * Encapsulation
-  * Constructors
+  * Constructors, ``new`` and ``super``
   * Static versus Instance
   * Inheritance
   * Polymorphism
@@ -469,18 +469,18 @@ When you hit something we haven't covered we'll talk about it in class
 ##Classes and Objects
 
 *[Overview](http://docs.oracle.com/javase/tutorial/java/javaOO/)
-
+###Inheritance and Classes
 ####Exercise
-* __EXERCISE:__ Group discussion on domain and then live code examples of``extends`` and ``implements`` 
+* __EXERCISE:__ Group discussion on domain 
+* __LIVE CODE:__ examples of``extends``, ``class``, ``new``, ``super``
 * __EXERCISE:__ Now on your own in groups of two. Pick a domain and make some notes:
   * Describe Domain (package name)
   * Find Classes (``class``)
   * Find Inheritance (``extends``)
-  * Find Interfaces (``interface``)
-  * Implement Interfaces (``implements``)
-  * Draft code 
+  * Draft up classes 
+* __DISCUSSION:__ Review of examples
 
-##Encapsulation and Interfaces
+###Encapsulation and Interfaces
 * Abstraction (Interface / Observable Behaviour / Exposed)
 * Encapsulation (Implementation / Hidden)
 * Use (StringBuffer) as example
@@ -489,42 +489,59 @@ When you hit something we haven't covered we'll talk about it in class
 * Implementation Is Hidden
 * Clearly defined interfaces allow _Polymorphism..._
 
-##Polymorphism
-* 
+###Polymorphism
 * The Java 6 Collection Types
+  *  
 * [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
+
+* __EXERCISE:__ Group discussion on collections 
+
  
   
-##The Java Collections Framework and Generics
+###The Java Collections Framework and Generics
 * [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
+* Interfaces
+  * [List](http://docs.oracle.com/javase/6/docs/api/java/util/List.html)
+  * [Map](http://docs.oracle.com/javase/6/docs/api/java/util/Map.html)
+  * [Set](http://docs.oracle.com/javase/6/docs/api/java/util/Set.html)
+* Concrete Implementations (Many we'll only cover the basics)
+  * [ArrayList](http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html)  
+  * [HashMap](http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html)  
+  * [HashSet](http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html) 
+  * __NOTE:__ If you want to use your own classes as keys or in unique collections ``hashCode`` and ``equals`` will need to be implemented (later)
+* [Generics](http://docs.oracle.com/javase/tutorial/java/generics/) - you may have noticed something new: ``<E>``  
 * [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
 
+* Additional Note: [unmodifiableCollection](http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29)
+  * ``UnsupportedOperationException``
 
 ####Exercise
 * __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
 
-###Objects (Java Objects)
-__TODO__
-* ``new``
-* ``getClass()``
+###Object Basics (Java Objects)
+* Every class extends ``Object``
+* ``toString`` -> type plus hashCode
+* ``getClass()`` -> ``Class``
 * ``instanceof``
-* 
+* casting - A lot less of it now we have Generic Collections
+* ``clone`` - ``Cloneable`` Marker interface
+* [``hashCode`` and ``equals`` contract](http://www.ibm.com/developerworks/library/j-jtp05273/)
 
-####Exercise
-* __EXERCISE:__ 
-__TODO__
+* __LIVE DEMO:__ Using ``String`` as an example
 
+###Class Class Basics (Java Objects)
+* ``Class`` extends ``Object``
+* ``getName()`` -> Useful for resources, jdbc drivers and loggers to avoid hard coding
+* ``getClassLoader()``
+* ``Class.forName()`` -> ``Class``
 
-
-* Know how to instantiate and use other Java Objects such as [StringBuffer]
-__TODO__
-
+* __LIVE DEMO:__ Using ``String`` as an example
 
 
 ##Exceptions (Java Language)
-__TODO__
 * Understand Java Exceptions 
+* Invadli
 * Checked vs Unchecked
 * [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 * Understand How and When to Throw exceptions
@@ -533,7 +550,7 @@ __TODO__
 
 
 ####Exercise
-* __EXERCISE:__ Catch Exception
+* __EXERCISE:__ Catch Exception - Create an catch an Arra
 * __EXERCISE:__ Throw Exception - Example Check for null and throw a NullPointerException, document it
 __TODO__
 
@@ -679,9 +696,10 @@ Know how to write Usable Java Classes
   * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
 * Understand Abstract Classes and how to define them
 
-##Sorting (Java Platform)
-* [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
+##Sorting and Searching (Java Platform)
+* [Natural Ordering](http://docs.oracle.com/javase/tutorial/collections/interfaces/order.html)
 * [Comparator vs Comparable](http://javarevisited.blogspot.com/2011/06/comparator-and-comparable-in-java.html)
+* [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
 
 ##Class
 * 
@@ -747,11 +765,16 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * Pick a Mock Framework  
   * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html) 
 
+##(Bonua)Serialization
+* [Object Streams](http://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
+* [``Serializable`` Marker interface](http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html)
+
+
 ##(Bonus)JSON
 * [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
 * Strings in Switch were only added in java 7 :(
 
-##(BOnus)Networking
+##(Bonus)Networking
 * [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
   * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
 
@@ -767,6 +790,15 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 ##(Bonus)Annotations
 * [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
 * [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
+
+##(Bonus) Multiple Threads
+* Where possible simplify your life by using your custom objects on single threads, otherwise:
+* [Concurrency](http://docs.oracle.com/javase/tutorial/essential/concurrency/)
+* ``synchronized`` - Ensure only a single thread is active at a given time
+* ``notify`` and ``wait``
+* When threads are holding the object's monitor (Inside a ``synchronized`` block)...
+* [Example](http://www.journaldev.com/1037/java-thread-wait-notify-and-notifyall-example)
+* [wait() and notify()](http://stackoverflow.com/questions/2536692/a-simple-scenario-using-wait-and-notify-in-java#2537117)
 
 ##(Bonus)Java Thread Locks
 * Java Processes
