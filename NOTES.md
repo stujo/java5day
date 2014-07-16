@@ -528,10 +528,11 @@ public class CopyFile {
 
 
 ###Appending to a File
-
 * ``new FileWriter("filename", true)``
 
-    
+* __EXERCISE:__ Use your file copy application as a basis for new utility function which takes a text file and converts all the uppercase letters to lowercase and vice versa. All other characters remain unchanged.
+* Recommendation: write a utility method which applies the transformation to a given string first, and test it using TestCases. Then use that method in your app.
+* @see ``Character.isUpperCase()``   
    
 ##Writing Your Own Java Classes   
 ###Class Definitions (Java Language)
@@ -579,8 +580,6 @@ Know how to write Usable Java Classes
 ##The Java Collections Framework and Generics
 * [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
 * [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
-* Using Generics in your own classes
-  * [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
 
 
 ####Exercise
@@ -591,7 +590,28 @@ Know how to write Usable Java Classes
 * Understand How and When to Throw exceptions
   *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
   * Checked vs Unchecked Exceptions 
-  
+
+##More Java Language
+###Generics In your Classes
+* [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
+####Exercise
+* __EXERCISE:__   Given this Interface:
+
+Save it as _IGenericStack.java_
+``` 
+interface GenericStack<T> { 
+  void push(T obj) throws StackFullException; 
+  T pop() throws StackEmptyException; 
+} 
+```
+In separate files define both ``StackEmptyException`` and a working implementation of ``IGenericStack`` called ``GenericStack``. ``GenericStack`` should have a single constructor which takes an ``int`` parameter which is the size of the fixed array to be used to back up the Stack. We are looking for a _LIFO_ : _Last in First Out_ stack.
+Before you start coding your implementation, write a JUnit 4 TestCase called ``GenericStackTest`` which Test the behaviour.
+Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tests
+
+###Enums
+* ``.values()`` ``for each``
+* ``switch``
+* ``toString`` 
   
 ##Additional Topics
 * [Auto-boxing and Unboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
