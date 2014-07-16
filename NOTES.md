@@ -9,6 +9,8 @@
 
 * About Me
 * About this Class
+  * Java is a vast ocean
+  * Learning how to find answers is key 
 * Each Jva Topic
   * No Slides
   * Chat and Code Demo - Ask Questions!
@@ -53,6 +55,7 @@
 * Understand How To use JUnit 4:
   * Test existing code
   * Test First with TDD 
+  * Code Coverage
 
 
 ##Set up for Java Development
@@ -529,7 +532,7 @@ If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
   * Overriding
   * Abstract classes and methods
   * Final (classes, methods, variables, parameters)
-* Recommendation: use ``final`` where you appropriate, to avoid coding errors and enable 
+* Recommendation: use ``final`` where you don't intend a value to change and avoid coding errors
 
 ##Interfaces in Java  
 * Understand Interfaces and how to use them
@@ -582,8 +585,7 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * Every class extends ``Object``
 * ``toString`` -> type plus hashCode
 * ``getClass()`` -> ``Class``
-* ``instanceof``
-* casting - A lot less of it now we have Generic Collections
+* ``instanceof``casting - A lot less of it now we have Generic Collections
 * ``clone`` - ``Cloneable`` Marker interface
 * [``hashCode`` and ``equals`` contract](http://www.ibm.com/developerworks/library/j-jtp05273/)
 
@@ -613,16 +615,12 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 ####Exercise
 * __EXERCISE:__ Catch Exception - Create and catch an [``ArrayIndexOutOfBoundsException.html``](http://docs.oracle.com/javase/6/docs/api/java/lang/ArrayIndexOutOfBoundsException.html)
 * __EXERCISE:__ Throw Exception - Example Check for null and throw a NullPointerException, document it
-__TODO__
-
 
 ##Files (JavaSE6 Platform)
 * [File](http://www.tutorialspoint.com/java/java_file_class.htm)
-__TODO__
+
 ####Exercise
 * __EXERCISE:__ Check File exists, list files in directory, check permissions, delete file
-__TODO__
-
 
 
 ##Stream based IO
@@ -731,8 +729,6 @@ public class CopyFile {
 * [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
 
 
-
-
 ##More Java
 ###Scope and Shadowing (Java Language)
 * Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
@@ -797,104 +793,95 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * Pick a Mock Framework  
   * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html) 
 
-##(Bonus)Serialization
-* [Object Streams](http://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
-* [``Serializable`` Marker interface](http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html)
+
+##Extras
+
+###CSV Parsing
+* [opencsv](http://opencsv.sourceforge.net/)
+```
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>2.3</version>
+		</dependency>
+```
+
+###JSON Parsing
+* [json.org](http://json.org/java/)
+```
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+			<scope>compile</scope>
+		</dependency>
+```
 
 
-##(Bonus)JSON
+###Logging API
+* [java.util.logging]()
+* ``mLogger = Logger.getLogger(App.class.getName());``
+* See boxes/jsonweather
+
+###DbUnit
+* Help test your database code with DbUnit
+* [Getting Started](http://dbunit.sourceforge.net/howto.html)
+* Allows importing of data and schemas easily
+```
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.5.0</version>
+			<scope>test</scope>
+		</dependency>
+```
+
+###H2 Database
+* Simple in memory database very useful for testing!
+* ``static final String JDBC_DRIVER = org.h2.Driver.class.getName();``
+* ``static final String JDBC_URL = "jdbc:h2:mem:inventory;DB_CLOSE_DELAY=-1";``
+```
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.179</version>
+			<scope>test</scope>
+		</dependency>
+```
+
+
+
+###(Bonus)JSON
 * [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
 * Strings in Switch were only added in java 7 :(
 
-##(Bonus)Networking
-* [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
-  * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
-
-##(Bonus)Logging API
-* See boxes/jsonweather
-
-##(Bonus)Connect to Oracle
-* [Maven?](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#1074971)
-* [System Dependency](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#9779295)
-* [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) 
-
-
-##(Bonus)Annotations
-* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
-* [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
-
-##(Bonus) Multiple Threads
-* Where possible simplify your life by using your custom objects on single threads, otherwise:
-* [Concurrency](http://docs.oracle.com/javase/tutorial/essential/concurrency/)
-* ``synchronized`` - Ensure only a single thread is active at a given time
-* ``notify`` and ``wait``
-* When threads are holding the object's monitor (Inside a ``synchronized`` block)...
-* [Example](http://www.journaldev.com/1037/java-thread-wait-notify-and-notifyall-example)
-* [wait() and notify()](http://stackoverflow.com/questions/2536692/a-simple-scenario-using-wait-and-notify-in-java#2537117)
-
-##(Bonus)Java Thread Locks
-* Java Processes
-  * ```jps```
-* Java Thread Dump
-  * ```jstack```
-* JConsole
-  * ```jconsole```
-  * [JConsole](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html)
-  * Threads -> Detect Deadlock (com/skillbox/boxes/threads/LockerApp)
-
-##(Bonus)Reading XML (SAX vs DOM)
-* [XML Processing](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/xml_processing.html)
-
-##(Bonus)Garbage Collection OPtions
-* [Pete Freitag](http://www.petefreitag.com/articles/gctuning/)
-
-##(Bonus)JavaDoc
-* [Simple example](https://github.com/stujo/java_boxes/tree/master/docsample)
-
-##(Bonus)Applets
-* [Applets](http://docs.oracle.com/javase/tutorial/deployment/applet/index.html)
-
-##(Bonus)Environment
-* [Properties](http://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
-* [System Properties](http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
-
-##(Bonus) NIO/IO Java 7
-* [IO / NIO differences](http://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
-
-##(Bonus)NumberFormat
-* [Jenkov NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
-
-##(Bonus)Regular Expressions
-* [Patterns](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)
-* [String#matches](http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#matches%28java.lang.String%29)
-
-##(Bonus)BigDecimal
-* [BigDecimal](http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html)
-* [Usage](http://www.javaworld.com/article/2075315/core-java/make-cents-with-bigdecimal.html)
-
-##(Bonus)Locales i18n
-* Demo boxes/externalstrings
-* [ResourceBundles](http://tutorials.jenkov.com/java-internationalization/resourcebundle.html)
-* [NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
-* [DecimalFormat](http://tutorials.jenkov.com/java-internationalization/decimalformat.html)
-
-##(Bonus) Recursion
-* Rewrite the Fibonacci Exercise with recursion
 
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
-* The order is read from a JSON file
+* Loads _stock_level.csv_ into a inventory system, in a persistent database of your choice
+* The order is read from a JSON file (_order.json_)
 * An ``Order`` object from the read data 
 * The ``OrderManager`` ``process``es the order as follows:
   * Tests that the items are in stock in a database by calling the ``InventoryManager``'s ``stockLevel(productId)`` 
   * If the stock on hand is >= the required quantity for the line item then
     * Decrements the stock level by calling the ``InventoryManager``'s ``decrementStock(productId)`` 
-  * Otherwise it marks the ``LineItem`` as out_of_stock  
+  * Otherwise it marks the ``LineItem`` as out_of_stock (all or nothing for each line item)
 * Once the order and all the line items have been processed:
-* The ``Order`` is passed to the ``ReceiptPrinter`` and a nicely formatted reciept is printed
+* The ``Order`` is passed to the ``ReceiptPrinter`` and a nicely formatted reciept is printed (_reciept.txt_)
+* Exports _stock_level_updated.csv_ to the file system with the updated stock levels read from the database
+
+
+##Sample Stock Data
+_stock_level.csv_
+```
+PRODUCT_ID,STOCK_LEVEL
+12,3
+14,2
+13,2
+```  
 
 ##Sample Input
-
+_order.json_
 ```
 {
 "timestamp":"20140709194738",
@@ -909,76 +896,122 @@ When you have completed all phases you will have a Java Application which perfor
 ```
 
 ##Sample Output
-
+_reciept.txt_
 ```
-Bob Williams (Y18123AS)
-San Francisco (42)
-July 9th, 2014
- ----------------
+  Bob Williams (Y18123AS)
+  San Francisco (42)
+  July 9th, 2014
+  ---------------
+  $500.00 - SOLD: 1 @ Flat Screen TV
+  $399.00 - SOLD: 1 @ Playstation 4
+  OUT_OF_STOCK: 4 @ Playstation Controller
+  --------------
+  Order Total: $899.00
+  --------------
+  Thank you for your business
+ 
 ```
-
-##Final Project Breakdown (Phases)
-  * Phase 1: Read in a hardcoded JSON file (as text) and output the raw contents to STDOUT
-  * Test Phase 1: How could we test this? - Class discussion - Suggestion create a ``generateReceipt`` method  which takes an ``InputStream`` and an ``OutputStream`` performs the task and write a test for that
-  
-  * Phase 2: Update the app to write the contents of the input file to a hard coded receipt file
-  * Test Phase 2: How could we test this? - Class discussion
-  
-  * Phase 3: Update the app to extract the file names from the command line invokeation and display an usage / error message if the usage is incorrect
-  * Test Phase 3: How could we test this? - Suggestion: Refactor code into a ``CommandLineParser`` to populate a ``JobConfigurationBean`` with ``orderFilename`` and ``recieptFilename`` and write tests for that.
-  
-  * Phase 4: Update the app to display error messages if the relevant files cannot be written or read
-  * Test Phase 4: How could we test this? - Suggestion: Code a  ``Logger`` interface and ``SimpleLogger`` class implementation that writes to STDOUT or STDERR. Refactor ``generateReceipt`` to get the logger to use from teh ``JobConfigurationBean`` and write tests which invoke ``generateReceipt`` with various ``JobConfigurationBean`` 
-  
-  * Phase 5: Update the app to parse the JSON into ``org.json.JSONObject``s and output the results for toString on these objects to the output file
-  * Test Phase 5: How can we test this? - Suggestion: Refactor code into a ``OrderFileParser`` which has the single responsibility of converting a json text ``InputStream`` into ``JSONObject``s.
-  
-  * Phase 6: Create JavaBean Classes to represent each of ``Order``, ``Customer``, ``StoreInfo``, ``LineItem``, ``Product``
-  * Test Phase 6: How can we test this? - Suggestion: Write tests for the to ensure they have working getters and setters for all the fields we want to read from the JSON. For example ``Order`` should have fields for ``customer``, ``storeInfo``, ``lineItems``. ``LineItem`` should have ``product`` and ``quantity``
-  
-  * Phase 7: Create an ``OrderFactory`` with a method which takes a populated  ``JSONObject`` as a parameter and returns a correctly populated instance of the ``Order`` JavaBean defined in the previous phase. The JSON objects in the sample file 
-  * Test Phase 7: How can we test this?
-  
-
-
-
 
 * Expectations
-  * Create a populate a local database with data from a CSV file
+  * Create a populate a local database with data from a CSV file (_stock_level.csv_)
   * Write Unit Tests for the components
-  * Package the Application into Executable Jar File format
-
+  * Package the Application into Executable Jar File format (Research Required)
   * Takes two command line arguments
     * orderfile - The file to read
     * recieptfile - The file to write 
-  * Reads in _orderfile_ a  customer_order.json JSON File (representing a customer order)
+  * Reads in _orderfile_ (_order.json_) JSON File (representing a customer order)
     * Find and use an available Parser
   * Creates Order Related Objects Based on the JSON File Contents
-    * Order 
-      * Customer
-      * StoreInfo 
-      * LineItem Array
-        * Product 
-        * Quantity
-    * Create an Object Factory (based on _Type_ from JSON)
-    * Loads StoreInfo data from the database
-    * Loads Product data from 
+    * Order ? and what else might you need?
   * Writes out _receiptfile_ a nicely formatted receipt describing the order
-  * Has JUnit tests for
-     * 
+  * Has JUnit tests 
+     * Unit tests: for functional Units
+     * Try you hand at an integration test
+  * Bonus: Using Logging 
      
 
-#Bonus Topics
+##Bonus Topics
+
+###(Bonus)Connect to Oracle
+* [Maven?](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#1074971)
+* [System Dependency](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#9779295)
+* [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) 
+
+###(Bonus)Annotations
+* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
+* [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
+
+###(Bonus)Reading XML (SAX vs DOM)
+* [XML Processing](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/xml_processing.html)
+
+###(Bonus)NumberFormat
+* [Jenkov NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
+
+###(Bonus)Regular Expressions
+* [Patterns](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)
+* [String#matches](http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#matches%28java.lang.String%29)
+
+###(Bonus)BigDecimal
+* [BigDecimal](http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html)
+* [Usage](http://www.javaworld.com/article/2075315/core-java/make-cents-with-bigdecimal.html)
+
+###(Bonus)Locales i18n
+* Demo boxes/externalstrings
+* [ResourceBundles](http://tutorials.jenkov.com/java-internationalization/resourcebundle.html)
+* [NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
+* [DecimalFormat](http://tutorials.jenkov.com/java-internationalization/decimalformat.html)
+
+###(Bonus)Java Thread Locks
+* Java Processes
+  * ```jps```
+* Java Thread Dump
+  * ```jstack```
+* JConsole
+  * ```jconsole```
+  * [JConsole](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html)
+  * Threads -> Detect Deadlock (com/skillbox/boxes/threads/LockerApp)
+
+###(Bonus) Recursion
+* Rewrite the Fibonacci Exercise with recursion
+
+###(Bonus)Environment
+* [Properties](http://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
+* [System Properties](http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
+
+###(Bonus)Serialization
+* [Object Streams](http://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
+* [``Serializable`` Marker interface](http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html)
+
+###(Bonus)Networking
+* [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
+  * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
+
+###(Bonus)Web Service
 * [Stand-alone Web Service](http://www.ibm.com/developerworks/webservices/tutorials/ws-eclipse-javase1/ws-eclipse-javase1.html)
   * [wsgen](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsgen.html) 
+###(Bonus)Web Client
 * [Stand-alone Web Client](http://www.ibm.com/developerworks/webservices/tutorials/ws-jse/index.html)
   * [wsimport](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsimport.html) 
-* Java Threads
-* XML Parsing
  
+###(Bonus)JavaDoc
+* [Simple example](https://github.com/stujo/java_boxes/tree/master/docsample)
+
+###(Bonus) Multiple Threads
+* Where possible simplify your life by using your custom objects on single threads, otherwise:
+* [Concurrency](http://docs.oracle.com/javase/tutorial/essential/concurrency/)
+* ``synchronized`` - Ensure only a single thread is active at a given time
+* ``notify`` and ``wait``
+* When threads are holding the object's monitor (Inside a ``synchronized`` block)...
+* [Example](http://www.journaldev.com/1037/java-thread-wait-notify-and-notifyall-example)
+* [wait() and notify()](http://stackoverflow.com/questions/2536692/a-simple-scenario-using-wait-and-notify-in-java#2537117)
+
+###(Bonus)Garbage Collection Options
+* [Pete Freitag](http://www.petefreitag.com/articles/gctuning/)
+
+###(Bonus)Applets
+* [Applets](http://docs.oracle.com/javase/tutorial/deployment/applet/index.html)
+
+###(Bonus) NIO/IO Java 7
+* [IO / NIO differences](http://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
 
 
-#Not Including
-* Concurrent
-* GUIs, awt, swing
-* Applets
