@@ -9,11 +9,13 @@
 
 * About Me
 * About this Class
+* Each Jva Topic
   * No Slides
-  * chat
-  * Demo
-  * Do 
-  * Review
+  * Chat and Code Demo - Ask Questions!
+  * Do - Pretend I'm the PdM
+  * Review Volunteer Together
+  * JUnit Tests where feasible 
+* Final Project (flexible) 
 * About the Book 
 * About You
 * Questions? 
@@ -21,9 +23,36 @@
 
 #Learning Objectives
 
-* Get Set Up for Java Development
+* Get Set Up for JavaSE 6 Development
 * Know how to compile, run and debug Java applications
-* 
+* Know how to create an application from scratch
+* Understand the following java topics:
+  * Classes and Objects
+  * Primitive Data Types
+  * Arrays and Collections
+  * Loop Structures
+  * Returning Values
+  * Passing Arguments
+  * Branching Structures 
+  * Exception Handling
+  * Basic File Access
+  * Stream based IO
+* Understand the following Object Oriented Concepts:
+  * Abstraction
+  * Encapsulation
+  * Constructors
+  * Static versus Instance
+  * Inheritance
+  * Polymorphism
+* Understand how to use Eclipse IDE for Java
+  * Code Short-cuts 
+  * Formatting Rules
+* Understand How To use JDBC to:
+  * Connect to a Database
+  * Query a Database 
+* Understand How To use JUnit 4:
+  * Test existing code
+  * Test First with TDD 
 
 
 ##Set up for Java Development
@@ -165,6 +194,7 @@ java -verbose -cp ./src HelloWorld
 ###Printing Out Values (Java Platform)
 * [System.out.printf](http://www.java2s.com/Code/JavaAPI/java.lang/System.out.printf.htm)
 * [Formatter](http://docs.oracle.com/javase/6/docs/api/java/util/Formatter.html#syntax)
+* [Cheat Sheet](http://alvinalexander.com/programming/printf-format-cheat-sheet)
 
 ####Exercise
 * __EXERCISE:__ Create a new folder called ``datatypes`` and a main application class called ``DataTypeApp``. Put the ``DataTypeApp`` in an appropriate ``package``. In DataTypeApp.main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
@@ -421,6 +451,13 @@ When you hit something we haven't covered we'll talk about it in class
 
    
 ##OO Principals in Java
+* Understand the following Object Oriented Concepts:
+  * Abstraction
+  * Encapsulation
+  * Constructors
+  * Static versus Instance
+  * Inheritance
+  * Polymorphism
 ###OO Overview
 * [Overview](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
 [What Is an Object?](http://docs.oracle.com/javase/tutorial/java/concepts/object.html)
@@ -445,6 +482,8 @@ When you hit something we haven't covered we'll talk about it in class
   * Draft code 
 
 ##Encapsulation and Interfaces
+* Abstraction (Interface / Observable Behaviour / Exposed)
+* Encapsulation (Implementation / Hidden)
 * Use (StringBuffer) as example
 * 'The way you use it' is well defined
   * ``interface`` or ``class`` definition
@@ -452,6 +491,7 @@ When you hit something we haven't covered we'll talk about it in class
 * Clearly defined interfaces allow _Polymorphism..._
 
 ##Polymorphism
+* 
 * The Java 6 Collection Types
 * [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
  
@@ -719,6 +759,12 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 ##(Bonus)Logging API
 * See boxes/jsonweather
 
+##(Bonus)Connect to Oracle
+* [Maven?](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#1074971)
+* [System Dependency](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#9779295)
+* [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) 
+
+
 ##(Bonus)Annotations
 * [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
 * [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
@@ -764,6 +810,7 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * [Usage](http://www.javaworld.com/article/2075315/core-java/make-cents-with-bigdecimal.html)
 
 ##(Bonus)Locales i18n
+* Demo boxes/externalstrings
 * [ResourceBundles](http://tutorials.jenkov.com/java-internationalization/resourcebundle.html)
 * [NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
 * [DecimalFormat](http://tutorials.jenkov.com/java-internationalization/decimalformat.html)
@@ -860,58 +907,6 @@ July 9th, 2014
   * Has JUnit tests for
      * 
      
-
-
-
-
-
-
- 
-  
-
-
-#Topics
-* Introducing Java
-
-* Java Development Tools Overview
-
-* Your First Java Application
-
-* Classes and Objects
-
-* Data Types
-
-* Arrays and Collections
-
-* Looping Structures
-
-* Returning Values and Passing Arguments
-
-* Branching Structures
-
-* Code Short-cuts and Formatting Rules
-
-* Encapsulation
-
-* Constructors
-
-* Static versus Instance
-
-* Inheritance
-
-* Polymorphism
-
-* Abstraction (Interfaces)
-
-* Exception Handling
-
-* Streams
-
-* Java and Databases, Introduction to JDBC
-
-* 
-
-
 
 #Bonus Topics
 * [Stand-alone Web Service](http://www.ibm.com/developerworks/webservices/tutorials/ws-eclipse-javase1/ws-eclipse-javase1.html)
