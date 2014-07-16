@@ -399,32 +399,144 @@ Enough hard coding! Let's read in some arguments
  
 
 ###Objects (Java Objects)
+__TODO__
 * ``new``
 * ``getClass()``
 * ``instanceof``
 
 ####Exercise
 * __EXERCISE:__ 
+__TODO__
 
 
 
 * Know how to instantiate and use other Java Objects such as [StringBuffer]
-
-
----------------
+__TODO__
 
 
 
-* Understand Java Exceptions and [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
+##Exceptions (Java Language)
+__TODO__
+* Understand Java Exceptions 
+* Checked vs Unchecked
 
-* Understand and Use [Streams IO](http://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+* [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 
-* Understand and Use [Java 6 File IO](http://www.mkyong.com/tutorials/java-io-tutorials/)
+####Exercise
+* __EXERCISE:__ Catch Exception
+__TODO__
+
+
+##Files (JavaSE6 Platform)
+* [File](http://www.tutorialspoint.com/java/java_file_class.htm)
+__TODO__
+####Exercise
+* __EXERCISE:__ Check File exists, list files in directory, check permissions, delete file
+__TODO__
+
+
+
+##Stream based IO
+* (NOT TO BE CONFUSED WITH Java8 Streams for Functional Programming) 
+* [Streams IO](http://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+  * byte streams
+  * character streams
+  * Blocking
+  * Use ``try`` and ``finally`` to close streams when done
+  * Notices that the streams are declared and initialized to ``null`` outside of the ``try`` and ``null`` is tested in the ``finally`` block
+
+###Canonical Example: File Byte Stream (Java Platform)
+
+```
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class CopyBytes {
+    public static void main(String[] args) throws IOException {
+
+        FileInputStream in = null;
+        FileOutputStream out = null;
+
+        try {
+            in = new FileInputStream("source.jpg");
+            out = new FileOutputStream("target.jpg");
+            int c;
+
+            while ((c = in.read()) != -1) {
+                out.write(c);
+            }
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+            if (out != null) {
+                out.close();
+            }
+        }
+    }
+}
+```
+
+* __EXERCISE:__ Implement a byte based file copy application which takes two paramters on the command line
+
+###Canonical Example: File Character Stream (Java Platform)
+
+
+```
+import java.io.*;
+
+public class CopyFile {
+   public static void main(String args[]) throws IOException
+   {
+      FileReader in = null;
+      FileWriter out = null;
+
+      try {
+         in = new FileReader("source.txt");
+         out = new FileWriter("target.txt");
+         
+         int c;
+         while ((c = in.read()) != -1) {
+            out.write(c);
+         }
+      }finally {
+         if (in != null) {
+            in.close();
+         }
+         if (out != null) {
+            out.close();
+         }
+      }
+   }
+}
+```
+
+* __EXERCISE:__ Implement a character based file copy application which takes two paramters on the command line
+
+
+###BufferedStreams
+
+* bytes: ``BufferedInputStream`` and ``BufferedOutputStream``
+* character: ``BufferedReader`` and ``BufferedWriter``
+* ``flush``
+
+
+
+* __EXERCISE:__ Implement a character based file copy application which takes two paramters on the command line using ``BufferedReader`` and ``BufferedWriter``
+
+
+
+###Appending to a File
+
+* ``new FileWriter("filename", true)``
+
     
    
 ##Writing Your Own Java Classes   
 ###Class Definitions (Java Language)
 Know how to write Usable Java Classes
+
 * One public class per .java file
 * Must Match path with package
 * Must Match Class name with Filename
