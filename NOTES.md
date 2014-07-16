@@ -276,16 +276,15 @@ int[] anArray = {
 Array Utilities
 * [Arrays](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html)
 
-####Exercise
-* __EXERCISE:__ _TODO_ Use Arrays
-
-
 
 ###Command Line Arguments (Java Language)
 Enough hard coding! Let's read in some arguments
 
 * ``public static void main(String[] args)``
 * How can we access args?
+
+####Exercise
+* __EXERCISE:__ Write a simple application in ``sorter`` which takes multiple command line arguments, puts them into an array, sorts the array and prints out the sorted array
 
 ####Exercise
 * __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
