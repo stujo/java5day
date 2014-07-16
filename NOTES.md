@@ -1,7 +1,31 @@
 5 Day Java 6 Introduction
 ----------------------
 
+#Intro
+* About this Basics
+  * 5 Days - Intro to Java Programming
+  * 10am-6pm
+  * Lunch at 1:30
+
+* About Me
+* About this Class
+  * No Slides
+  * chat
+  * Demo
+  * Do 
+  * Review
+* About the Book 
+* About You
+* Questions? 
+
+
 #Learning Objectives
+
+* Get Set Up for Java Development
+* Know how to compile, run and debug Java applications
+* 
+
+
 ##Set up for Java Development
 * Install the JavaSE (JDK 1.6 or 1.7)
   * [Download](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
@@ -268,8 +292,10 @@ for(;;)
 * __EXERCISE:__ Rewrite one of the loops in ``RandomArrayer`` to use the for each loop syntax
 
 ###break in loops (Control Flow)
-* Shortcut exit
+* Shortcut exit loop
 
+###continue in loops (Control Flow)
+* Shortcut next iteration
 
 ##Java Platform Classes
 ###Strings (Java Platform)
@@ -630,6 +656,7 @@ Know how to write Usable Java Classes
 ##More Java Language
 ###Generics In your Classes
 * [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
+
 ####Exercise
 * __EXERCISE:__   Given this Interface:
 
