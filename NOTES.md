@@ -451,11 +451,12 @@ When you hit something we haven't covered we'll talk about it in class
    
 ##OO Principals in Java
 * Understand the following Object Oriented Concepts:
-  * Abstraction
-  * Encapsulation
+  * Classes
+  * Objects
+  * Inheritance
+  * Abstraction and Encapsulation
   * Constructors, ``new`` and ``super``
   * Static versus Instance
-  * Inheritance
   * Polymorphism
 ###OO Overview
 * [Overview](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
@@ -467,40 +468,97 @@ When you hit something we haven't covered we'll talk about it in class
 [What Is Composition?](http://javarevisited.blogspot.com/2013/06/why-favor-composition-over-inheritance-java-oops-design.html)
 
 ##Classes and Objects
+If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
 
-*[Overview](http://docs.oracle.com/javase/tutorial/java/javaOO/)
+* [Overview](http://docs.oracle.com/javase/tutorial/java/javaOO/)
+* Class definitions define:
+  * How instances must be created and initialized (Constructors, or other creation pattern) 
+  * What instances can do - behaviour - (their interfaces, instance methods)
+  * How they do it - implementation
+  * What data they store internally - instance data
+  * Who can access what
+  * Any Class specific data, constants or behaviours (``static``)
+
 ###Inheritance and Classes
 ####Exercise
-* __EXERCISE:__ Group discussion on domain 
-* __LIVE CODE:__ examples of``extends``, ``class``, ``new``, ``super``
+* __EXERCISE:__ Group discussion, select and brainstorm on domain 
+* __LIVE CODE:__ examples of``extends``, ``class``
 * __EXERCISE:__ Now on your own in groups of two. Pick a domain and make some notes:
   * Describe Domain (package name)
   * Find Classes (``class``)
   * Find Inheritance (``extends``)
-  * Draft up classes 
+  * Draft up classes on paper
 * __DISCUSSION:__ Review of examples
 
+
+##Writing Your Own Java Classes   
+###Class Definitions (Java Language)
+* One public class per .java file
+* Must Match path with package
+* Must Match Class name with Filename
+* Constructors
+  * ``new`` 
+  * ``super``
+  * ``this``
+* Review Class Methods and Class Variables
+  * ``static``
+* Instance Methods and Instance Variables
+  * non-``static``
+  
+ * __EXERCISE:__  Implement the basics of your classes from the previous exercise
+ 
+
+###Object Equality (Java Language)
+* [``equals``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals%28java.lang.Object%29) and [``hashCode``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode%28%29)
+* For this exercise [``GregorianCalendar.html#GregorianCalendar(int, int, int)``](http://docs.oracle.com/javase/6/docs/api/java/util/GregorianCalendar.html#GregorianCalendar%28int, int, int%29) might be handy
+* __EXERCISE:__ Write a Java class called ``Employee`` with fields for ``firstName``, ``lastName`` and ``dateOfBirth`` as ``java.util.Date`` . Override ``toString`` in a meaningful way. Now try and implement equals and hashCode according to the documentation provided
+* __DISCUSSION:__ GregorianCalendar - Allows you to create dates and Calendar - Date Math
+* __DEMO:__ Eclipse Generators
+
+###Access Modifiers (Java Language)  
+* [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) 
+* ``public``
+* ``private`` 
+* 'package' - The default
+* ``protected``
+
+* __EXERCISE:__  Discuss with your partner the appropriate access modifiers for parts of your class system
+  
+##More Inheritance in Java (Java Language)
+* Understand Class inheritance and how to implement it
+  * Overriding
+  * Abstract classes and methods
+  * Final (classes, methods, variables, parameters)
+* Recommendation: use ``final`` where you appropriate, to avoid coding errors and enable 
+
+##Interfaces in Java  
+* Understand Interfaces and how to use them
+  * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
+* Understand Abstract Classes and how to define them
+* Interfaces are entirely abstract but can contain constants
+
 ###Encapsulation and Interfaces
+When you turn the steering wheel, the front wheels turn, you don't care how it works
+* Use [StringBuilder](http://docs.oracle.com/javase/6/docs/api/java/lang/StringBuilder.html) as an example
 * Abstraction (Interface / Observable Behaviour / Exposed)
 * Encapsulation (Implementation / Hidden)
-* Use (StringBuffer) as example
 * 'The way you use it' is well defined
   * ``interface`` or ``class`` definition
-* Implementation Is Hidden
 * Clearly defined interfaces allow _Polymorphism..._
 
 ###Polymorphism
-* The Java 6 Collection Types
-  *  
-* [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
-
-* __EXERCISE:__ Group discussion on collections 
-
- 
+When you rent a car, it doesn't matter what model it is, you can still drive it
+* [Polymorphism](http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html)
+* Share some common nature but differ in implementation or additional behaviours
+  * Interfaces with multiple implementations
+  * ``@Override``s of instance methods
+  * Implementations of ``abstract`` methods
+* [WikiPedia](http://en.wikipedia.org/wiki/Polymorphism_(computer_science))
   
 ###The Java Collections Framework and Generics
 * [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
 * Interfaces
+  * [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
   * [List](http://docs.oracle.com/javase/6/docs/api/java/util/List.html)
   * [Map](http://docs.oracle.com/javase/6/docs/api/java/util/Map.html)
   * [Set](http://docs.oracle.com/javase/6/docs/api/java/util/Set.html)
@@ -516,6 +574,7 @@ When you hit something we haven't covered we'll talk about it in class
   * ``UnsupportedOperationException``
 
 ####Exercise
+* __EXERCISE:__ Group discussion on collections 
 * __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
 
@@ -537,11 +596,13 @@ When you hit something we haven't covered we'll talk about it in class
 * ``Class.forName()`` -> ``Class``
 
 * __LIVE DEMO:__ Using ``String`` as an example
-
+ 
 
 ##Exceptions (Java Language)
 * Understand Java Exceptions 
-* Invadli
+* Help keep code simple and readable
+* Invalid Parameters, unexpected conditions, things outside of your control
+* Not for control flow
 * Checked vs Unchecked
 * [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 * Understand How and When to Throw exceptions
@@ -550,7 +611,7 @@ When you hit something we haven't covered we'll talk about it in class
 
 
 ####Exercise
-* __EXERCISE:__ Catch Exception - Create an catch an Arra
+* __EXERCISE:__ Catch Exception - Create and catch an [``ArrayIndexOutOfBoundsException.html``](http://docs.oracle.com/javase/6/docs/api/java/lang/ArrayIndexOutOfBoundsException.html)
 * __EXERCISE:__ Throw Exception - Example Check for null and throw a NullPointerException, document it
 __TODO__
 
@@ -662,56 +723,27 @@ public class CopyFile {
 * Recommendation: write a utility method which applies the transformation to a given string first, and test it using TestCases. Then use that method in your app.
 * @see ``Character.isUpperCase()``   
    
-##Writing Your Own Java Classes   
-###Class Definitions (Java Language)
-Know how to write Usable Java Classes
 
-* One public class per .java file
-* Must Match path with package
-* Must Match Class name with Filename
-* Constructors
-  * super
-  * this
-* Review Class Methods and Class Variables
-  * ``static``
-* Instance Methods and Instance Variables
-  * non-``static``
-  * ``equals`` and ``hashCode``
-* __EXERCISE:__ 
-
-  
-* [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) 
-  
-  
- 
-##Class Inheritance in Java 
-* Understand Class inheritance and how to implement it
-  * Overriding
-  * Abstract
-  * Final (classes, methods, variables, parameters)
-  * Final Classes
-
-##Interfaces in Java  
-* Understand Interfaces and how to use them
-  * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
-* Understand Abstract Classes and how to define them
 
 ##Sorting and Searching (Java Platform)
 * [Natural Ordering](http://docs.oracle.com/javase/tutorial/collections/interfaces/order.html)
 * [Comparator vs Comparable](http://javarevisited.blogspot.com/2011/06/comparator-and-comparable-in-java.html)
 * [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
 
-##Class
-* 
 
-##Scope
+
+
+##More Java
+###Scope and Shadowing (Java Language)
 * Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
-  
+* mXXX, sXXX or other naming conventions can assist in avoiding this
+
+####Exercise
+* __EXERCISE:__  Write a sample class that demonstrates variable shadowing and then make a promise to yourself not to do it again!
+* __QUESTION:__ What is the scope of the variables declared in a for loop?
 
 
-
-##More Java Language
-###Generics In your Classes
+###Generics In your Classes (Java Platform)
 * [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
 
 ####Exercise
@@ -759,13 +791,13 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
 
 
-##(Bonus)JUnit
+##JUnit
 * Know how to write JUnit test cases to Unit Test Your Code   
 * [http://www.mkyong.com/tutorials/junit-tutorials/](http://www.mkyong.com/tutorials/junit-tutorials/)
 * Pick a Mock Framework  
   * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html) 
 
-##(Bonua)Serialization
+##(Bonus)Serialization
 * [Object Streams](http://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
 * [``Serializable`` Marker interface](http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html)
 
@@ -884,9 +916,6 @@ San Francisco (42)
 July 9th, 2014
  ----------------
 ```
-
-
-
 
 ##Final Project Breakdown (Phases)
   * Phase 1: Read in a hardcoded JSON file (as text) and output the raw contents to STDOUT
