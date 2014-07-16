@@ -548,6 +548,10 @@ Know how to write Usable Java Classes
 ##(Bonus) NIO/IO Java 7
 * [IO / NIO differences](http://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
 
+##(Bonus)NumberFormat
+* [Jenkov NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
+
+
 ##(Bonus)Regular Expressions
 * [Patterns](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)
 * [String#matches](http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#matches%28java.lang.String%29)
@@ -556,7 +560,12 @@ Know how to write Usable Java Classes
 * [BigDecimal](http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html)
 * [Usage](http://www.javaworld.com/article/2075315/core-java/make-cents-with-bigdecimal.html)
 
-##(Bonus)Locale
+##(Bonus)Locales i18n
+* [ResourceBundles](http://tutorials.jenkov.com/java-internationalization/resourcebundle.html)
+* [NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
+* [DecimalFormat](http://tutorials.jenkov.com/java-internationalization/decimalformat.html)
+
+
 
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
