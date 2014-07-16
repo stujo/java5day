@@ -218,6 +218,26 @@ int[] anArray = {
 ####Exercise
 * __EXERCISE:__ Re-write the ``LuckyDay`` application to use an array
 
+###Arrays and Array
+Array Utilities
+* [Arrays](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html)
+
+####Exercise
+* __EXERCISE:__ _TODO_ Use Arrays
+
+
+
+###Command Line Arguments (Java Language)
+Enough hard coding! Let's read in some arguments
+
+* ``public static void main(String[] args)``
+* How can we access args?
+
+####Exercise
+* __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
+
+
+
 ###while (Control Flow)
 *[while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
 
@@ -249,6 +269,7 @@ for(;;)
 
 ###break in loops (Control Flow)
 * Shortcut exit
+
 
 ##Java Platform Classes
 ###Strings (Java Platform)
@@ -372,16 +393,6 @@ When you hit something we haven't covered we'll talk about it in class
 ####Review
 * [Autoboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 
-###Command Line Arguments
-Enough hard coding! Let's read in some arguments
-
-* ``public static void main(String[] args)``
-* How can we access args?
-
-####Exercise
-* __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
-
---------------
    
 ##OO Principals in Java
 ###OO Overview
@@ -392,17 +403,48 @@ Enough hard coding! Let's read in some arguments
 [What Is an Interface?](http://docs.oracle.com/javase/tutorial/java/concepts/interface.html)
 [What Is a Package?](http://docs.oracle.com/javase/tutorial/java/concepts/package.html)
 [What Is Composition?](http://javarevisited.blogspot.com/2013/06/why-favor-composition-over-inheritance-java-oops-design.html)
-###OO In the Java Platform
-* Encapsulation Use (StringBuffer) as example
+
+##Classes and Objects
+
+*[Overview](http://docs.oracle.com/javase/tutorial/java/javaOO/)
+
+####Exercise
+* __EXERCISE:__ Group discussion on domain and then live code examples of``extends`` and ``implements`` 
+* __EXERCISE:__ Now on your own in groups of two. Pick a domain and make some notes:
+  * Describe Domain (package name)
+  * Find Classes (``class``)
+  * Find Inheritance (``extends``)
+  * Find Interfaces (``interface``)
+  * Implement Interfaces (``implements``)
+  * Draft code 
+
+##Encapsulation and Interfaces
+* Use (StringBuffer) as example
+* 'The way you use it' is well defined
+  * ``interface`` or ``class`` definition
+* Implementation Is Hidden
+* Clearly defined interfaces allow _Polymorphism..._
+
+##Polymorphism
 * The Java 6 Collection Types
-* Polymorphism (Streams)
+* [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
  
+  
+##The Java Collections Framework and Generics
+* [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
+* [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
+
+
+####Exercise
+* __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
+
 
 ###Objects (Java Objects)
 __TODO__
 * ``new``
 * ``getClass()``
 * ``instanceof``
+* 
 
 ####Exercise
 * __EXERCISE:__ 
@@ -419,11 +461,15 @@ __TODO__
 __TODO__
 * Understand Java Exceptions 
 * Checked vs Unchecked
-
 * [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
+* Understand How and When to Throw exceptions
+  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
+  * Checked vs Unchecked Exceptions 
+
 
 ####Exercise
 * __EXERCISE:__ Catch Exception
+* __EXERCISE:__ Throw Exception - Example Check for null and throw a NullPointerException, document it
 __TODO__
 
 
@@ -568,28 +614,18 @@ Know how to write Usable Java Classes
   * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
 * Understand Abstract Classes and how to define them
 
+##Sorting (Java Platform)
+* [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
+* [Comparator vs Comparable](http://javarevisited.blogspot.com/2011/06/comparator-and-comparable-in-java.html)
+
 ##Class
 * 
 
 ##Scope
 * Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
   
-##Arrays and Array
-* [Arrays](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html)
-  
-##The Java Collections Framework and Generics
-* [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
-* [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
 
 
-####Exercise
-* __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
-
-
-##Throwing Exceptions
-* Understand How and When to Throw exceptions
-  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
-  * Checked vs Unchecked Exceptions 
 
 ##More Java Language
 ###Generics In your Classes
@@ -641,7 +677,9 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 
 ##(Bonus)JUnit
 * Know how to write JUnit test cases to Unit Test Your Code   
+* [http://www.mkyong.com/tutorials/junit-tutorials/](http://www.mkyong.com/tutorials/junit-tutorials/)
 * Pick a Mock Framework  
+  * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html) 
 
 ##(Bonus)JSON
 * [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
@@ -651,13 +689,12 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
   * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
 
-##(Bonus)Locale
-
 ##(Bonus)Logging API
 * See boxes/jsonweather
 
 ##(Bonus)Annotations
-* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) and [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
+* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
+* [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
 
 ##(Bonus)Java Thread Locks
 * Java Processes
