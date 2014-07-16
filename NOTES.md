@@ -372,7 +372,6 @@ When you hit something we haven't covered we'll talk about it in class
 ####Review
 * [Autoboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 
-
 ###Command Line Arguments
 Enough hard coding! Let's read in some arguments
 
@@ -382,6 +381,7 @@ Enough hard coding! Let's read in some arguments
 ####Exercise
 * __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
 
+--------------
    
 ##OO Principals in Java
 ###OO Overview
@@ -397,7 +397,6 @@ Enough hard coding! Let's read in some arguments
 * The Java 6 Collection Types
 * Polymorphism (Streams)
  
-----------------
 
 ###Objects (Java Objects)
 * ``new``
@@ -424,17 +423,25 @@ Enough hard coding! Let's read in some arguments
     
    
 ##Writing Your Own Java Classes   
+###Class Definitions (Java Language)
 Know how to write Usable Java Classes
-
+* One public class per .java file
+* Must Match path with package
+* Must Match Class name with Filename
 * Constructors
   * super
   * this
-* Class Methods and Class Variables
+* Review Class Methods and Class Variables
   * ``static``
 * Instance Methods and Instance Variables
   * non-``static``
   * ``equals`` and ``hashCode``
-  * Java Access Modifiers
+* __EXERCISE:__ 
+
+  
+* [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) 
+  
+  
  
 ##Class Inheritance in Java 
 * Understand Class inheritance and how to implement it
@@ -465,7 +472,7 @@ Know how to write Usable Java Classes
 
 
 ####Exercise
-* __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 1 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
+* __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
 
 ##Throwing Exceptions
@@ -498,6 +505,7 @@ Know how to write Usable Java Classes
 * When the file is imported a second time existing records are updated and new records are added
 * [OpenCSV](http://viralpatel.net/blogs/java-read-write-csv-file/)
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
+
 
 ##(Bonus)JUnit
 * Know how to write JUnit test cases to Unit Test Your Code   
@@ -551,7 +559,6 @@ Know how to write Usable Java Classes
 ##(Bonus)NumberFormat
 * [Jenkov NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
 
-
 ##(Bonus)Regular Expressions
 * [Patterns](http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)
 * [String#matches](http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#matches%28java.lang.String%29)
@@ -565,7 +572,8 @@ Know how to write Usable Java Classes
 * [NumberFormat](http://tutorials.jenkov.com/java-internationalization/numberformat.html)
 * [DecimalFormat](http://tutorials.jenkov.com/java-internationalization/decimalformat.html)
 
-
+##(Bonus) Recursion
+* Rewrite the Fibonacci Exercise with recursion
 
 #Final Project
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
