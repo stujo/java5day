@@ -17,6 +17,7 @@
  * Do - Pretend I'm the PdM
  * Review Volunteer Together
  * JUnit Tests where feasible
+* Checkpoints 
 * Final Project (flexible)
 * About the Book
 * About You
@@ -58,6 +59,8 @@
  * Test First with TDD
  * Code Coverage
 
+#Checkpoints
+We stop and review, ask any questions you have on that topic and lets us ensure we know how to practically apply the concept / technique
 
 #Set up for Java Development
 * Install the JavaSE (JDK 1.6 or 1.7)
