@@ -343,12 +343,10 @@ for(;;)
 
 * __CHECKPOINT:__ Loop Structures
 
-#Java Platform Classes
 ##Strings (Java Platform)
 * [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html) is a special case object in that you can use a literal notation ``"my string contents"`` and get an object reference
 * [StringBuilder](http://docs.oracle.com/javase/tutorial/java/data/buffers.html)
 
-#More Java Language
 ##Returning Values (Methods)
 * ``return``
 * void
@@ -420,8 +418,7 @@ A Testy way to learn Java....
 * [Java Koans](https://github.com/matyb/java-koans)
 When you hit something we haven't covered we'll talk about it in class
 
-#More Java Platform
-##Java Platform Differences
+#Java Platform Differences
 * Know the difference between [JavaSE and JavaEE](http://docs.oracle.com/javaee/6/firstcup/doc/gkhoy.html)
 * [Java Platform Versions](http://javapapers.com/core-java/java-features-and-history/)
 * [JavaSE 6 Overview](http://docs.oracle.com/javase/6/docs/technotes/guides/)
@@ -462,8 +459,8 @@ When you hit something we haven't covered we'll talk about it in class
 * Always Format the same way to minimize conflicts
 * __CHECKPOINT:__ Formatting Rules
 
-# More Java Platform Classes
-##Numbers (Java Platform)
+# Numbers
+##Wrapper Classes
 * For the built in numeric primitive data types we have [wrapper types](http://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
 
 ###Exercise
@@ -651,9 +648,8 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * __CHECKPOINT:__ Static versus Instance
 
 
-#More Java Language
-##Exceptions (Java Language)
-* Understand Java Exceptions
+#Exceptions
+##Understand Java Exceptions
 * Help keep code simple and readable
 * Invalid Parameters, unexpected conditions, things outside of your control
 * Not for control flow
@@ -672,14 +668,14 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 
 * __CHECKPOINT:__ Exception Handling
 
-#Files
-##Files (JavaSE6 Platform)
+#File Access
+##File (JavaSE6 Platform)
 * [File](http://www.tutorialspoint.com/java/java_file_class.htm)
+* Reading and Writing Files is done using the Stream IO APIs
 
 ###Exercise
 * __EXERCISE:__ Check File exists, list files in directory, check permissions, delete file
 
-* __CHECKPOINT:__ Basic File Access
 
 #Stream Based IO
 ##Streams (Java Platform)
@@ -780,17 +776,28 @@ public class CopyFile {
 * Recommendation: write a utility method which applies the transformation to a given string first, and test it using TestCases. Then use that method in your app.
 * @see ``Character.isUpperCase()``
 
+* __CHECKPOINT:__ Basic File Access
 * __CHECKPOINT:__ Stream based IO
 
-#More Java
-##Sorting and Searching (Java Platform)
+#Sorting and Searching
+##Natural Ordering
 * [Natural Ordering](http://docs.oracle.com/javase/tutorial/collections/interfaces/order.html)
+
+##Comparisons
 * [Comparator vs Comparable](http://javarevisited.blogspot.com/2011/06/comparator-and-comparable-in-java.html)
+* __EXERCISE:__ Implement Comparable with your ``Employee`` class
+* __EXERCISE:__ Put some ``Employee``s in an ``ArrayList`` and sort them
+
+##Searching
+* Requires a sorted array
 * [Arrays Search](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#binarySearch%28T[],%20int,%20int, T,%20java.util.Comparator%29)
+* __EXERCISE:__ Sort and Array of ``Employee``s by date of birth using a comparator
 
-
-##Scope and Shadowing (Java Language)
+#Variable Scope
+##What is Scope?
 * Understand variable scope and shadowing - com.skillbox.boxes.scope.ScopeExample
+
+##Variable Shadowing
 * mXXX, sXXX or other naming conventions can assist in avoiding this
 
 ###Exercise
@@ -798,38 +805,50 @@ public class CopyFile {
 * __QUESTION:__ What is the scope of the variables declared in a for loop?
 
 
+#Coding Generics
 ##Generics In your Classes (Java Platform)
-* [Bounded and Unbounded](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
 
 ###Exercise
 * __EXERCISE:__   Given this Interface:
 
-Save it as _IGenericStack.java_
+Save it as _GenericStack.java_
 ```
 interface GenericStack<T> {
-  void push(T obj) throws StackFullException;
-  T pop() throws StackEmptyException;
+  void push(T obj) throws GenericStackFullException;
+  T pop() throws GenericStackEmptyException;
 }
 ```
-In separate files define both ``StackEmptyException`` and a working implementation of ``IGenericStack`` called ``GenericStack``. ``GenericStack`` should have a single constructor which takes an ``int`` parameter which is the size of the fixed array to be used to back up the Stack. We are looking for a _LIFO_ : _Last in First Out_ stack.
-Before you start coding your implementation, write a JUnit 4 TestCase called ``GenericStackTest`` which Test the behaviour.
-Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tests
+In separate files define ``GenericStackEmptyException``, ``GenericStackFullException`` and a working implementation of ``GenericStack`` called ``ArrayBasedGenericStack``. 
 
-##Enums
+``ArrayBasedGenericStack`` should have a single constructor which takes an ``int`` parameter which is the size of the fixed array to be used to back up the Stack. We are looking for a _LIFO_ : _Last in First Out_ stack.
+
+Before you start coding your implementation, write a JUnit 4 TestCase called ``ArrayBasedGenericStackTest`` which Test the behaviour.
+Use ``@Test(expected = GenericStackEmptyException.class)`` to annotate some of your tests
+
+* [Bounded and Unbounded Generics](http://docs.oracle.com/javase/tutorial/java/generics/bounded.html)
+
+#Enums
+##Coding and Using Enums
+
+* [Java Enum Docs](http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
 * ``.values()`` ``for each``
 * ``switch``
 * ``toString``
+* __EXERCISE:__  Recode the LuckyDay app using a ``DayOfWeek`` Enum and the ``values()`` array
 
-##Additional Topics
-* [Auto-boxing and Unboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
-* [Math](http://docs.oracle.com/javase/tutorial/java/data/beyondmath.html)
-* [hashCode and equals](http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#hashCode) (Use Eclipse)
-* [Enumerations](http://docs.oracle.com/javase/6/docs/api/java/util/StringTokenizer.html) (StringTokenizer)
+
+#Packages
+##Packages and Imports
+File paths match package names
+* [packages and imports](http://docs.oracle.com/javase/tutorial/java/package/usepkgs.html)
+* [static imports](http://docs.oracle.com/javase/1.5.0/docs/guide/language/static-import.html)
 
 #Developer Skills
 ##Advanced Debugging
 * Debug to a _remote_(local) application using Java Platform Debugger Architecture (JPDA) from Eclipse
  * [agentlib options](http://docs.oracle.com/javase/6/docs/technotes/guides/jpda/conninv.html)
+
+* __EXERCISE:__ Start the LuckyDay app with the debugger enabled and connect to it using Eclipse
 
 #JDBC
 ##JDBC Connections (Java Platform)
@@ -841,19 +860,22 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * close ``Connection`` when done (if you opened it)
 * [Batching Statements](http://viralpatel.net/blogs/batch-insert-in-java-jdbc/)
 
-
-##JDBC Project
+## Exercise
+* __EXERCISE:__
 * A project which reads a CSV File from disk and imports some of the data into a database
 * [DataSource](http://docs.oracle.com/javase/6/docs/api/javax/sql/DataSource.html)
 * When the file is imported a second time existing records are updated and new records are added
 * [OpenCSV](http://viralpatel.net/blogs/java-read-write-csv-file/)
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
-
+* Get it working without batching first and then add batch queries
 * __CHECKPOINT:__ Connect to a Database
 * __CHECKPOINT:__ Query a Database
 
-#Testing
-##JUnit
+
+# Testing with JUnit4
+
+##JUnit4
+* We've been testing along the way
 * Know how to write JUnit test cases to Unit Test Your Code
 * [http://www.mkyong.com/tutorials/junit-tutorials/](http://www.mkyong.com/tutorials/junit-tutorials/)
 * Pick a Mock Framework
@@ -862,65 +884,7 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * __CHECKPOINT:__ Test existing code
 * __CHECKPOINT:__ Test First with TDD
 
-#Extras
-##CSV Parsing
-* [opencsv](http://opencsv.sourceforge.net/)
-```
-		<dependency>
-			<groupId>net.sf.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>2.3</version>
-		</dependency>
-```
 
-##JSON Parsing
-* [json.org](http://json.org/java/)
-```
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20140107</version>
-			<scope>compile</scope>
-		</dependency>
-```
-
-
-##Logging API
-* [java.util.logging]()
-* ``mLogger = Logger.getLogger(App.class.getName());``
-* See boxes/jsonweather
-
-##DbUnit
-* Help test your database code with DbUnit
-* [Getting Started](http://dbunit.sourceforge.net/howto.html)
-* Allows importing of data and schemas easily
-```
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<version>2.5.0</version>
-			<scope>test</scope>
-		</dependency>
-```
-
-##H2 Database
-* Simple in memory database very useful for testing!
-* ``static final String JDBC_DRIVER = org.h2.Driver.class.getName();``
-* ``static final String JDBC_URL = "jdbc:h2:mem:inventory;DB_CLOSE_DELAY=-1";``
-```
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.179</version>
-			<scope>test</scope>
-		</dependency>
-```
-
-
-
-##JSON
-* [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork/articles/java/json-1973242.html)
-* Strings in Switch were only added in java 7 :(
 
 
 #Final Project
@@ -937,8 +901,64 @@ When you have completed all phases you will have a Java Application which perfor
 * The ``Order`` is passed to the ``ReceiptPrinter`` and a nicely formatted reciept is printed (_reciept.txt_)
 * Exports _stock_level_updated.csv_ to the file system with the updated stock levels read from the database
 
+##Background Topics
+###CSV Parsing
+* [opencsv](http://opencsv.sourceforge.net/)
+```
+    <dependency>
+      <groupId>net.sf.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>2.3</version>
+    </dependency>
+```
 
-##Sample Stock Data
+###JSON
+/articles/java/json-1973242.html)
+* Strings in Switch were only added in java 7 :(
+* [json.org](http://json.org/java/)
+```
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20140107</version>
+      <scope>compile</scope>
+    </dependency>
+```
+* [The Object Model API vs The Streaming API](http://www.oracle.com/technetwork
+
+###Logging API
+* [java.util.logging]()
+* ``mLogger = Logger.getLogger(App.class.getName());``
+* See boxes/jsonweather
+
+###DbUnit
+* Help test your database code with DbUnit
+* [Getting Started](http://dbunit.sourceforge.net/howto.html)
+* Allows importing of data and schemas easily
+```
+    <dependency>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <version>2.5.0</version>
+      <scope>test</scope>
+    </dependency>
+```
+
+###H2 Database
+* Simple in memory database very useful for testing!
+* ``static final String JDBC_DRIVER = org.h2.Driver.class.getName();``
+* ``static final String JDBC_URL = "jdbc:h2:mem:inventory;DB_CLOSE_DELAY=-1";``
+```
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.179</version>
+      <scope>test</scope>
+    </dependency>
+```
+
+##Sample Data
+###Sample Stock Data
 _stock_level.csv_
 ```
 PRODUCT_ID,STOCK_LEVEL
@@ -947,7 +967,7 @@ PRODUCT_ID,STOCK_LEVEL
 13,2
 ```
 
-##Sample Input
+###Sample Input
 _order.json_
 ```
 {
@@ -962,7 +982,7 @@ _order.json_
 }
 ```
 
-##Sample Output
+###Sample Output
 _reciept.txt_
 ```
   Bob Williams (Y18123AS)
@@ -979,22 +999,22 @@ _reciept.txt_
 
 ```
 
-* Expectations
- * Create a populate a local database with data from a CSV file (_stock_level.csv_)
- * Write Unit Tests for the components
- * Package the Application into Executable Jar File format (Research Required)
- * Takes two command line arguments
-   * orderfile - The file to read
-   * recieptfile - The file to write
- * Reads in _orderfile_ (_order.json_) JSON File (representing a customer order)
-   * Find and use an available Parser
- * Creates Order Related Objects Based on the JSON File Contents
-   * Order ? and what else might you need?
- * Writes out _receiptfile_ a nicely formatted receipt describing the order
- * Has JUnit tests
-    * Unit tests: for functional Units
-    * Try you hand at an integration test
- * Bonus: Using Logging
+##Expectations
+* Create a populate a local database with data from a CSV file (_stock_level.csv_)
+* Write Unit Tests for the components
+* Package the Application into Executable Jar File format (Research Required)
+* Takes two command line arguments
+  * orderfile - The file to read
+  * recieptfile - The file to write
+* Reads in _orderfile_ (_order.json_) JSON File (representing a customer order)
+  * Find and use an available Parser
+* Creates Order Related Objects Based on the JSON File Contents
+  * Order ? and what else might you need?
+* Writes out _receiptfile_ a nicely formatted receipt describing the order
+* Has JUnit tests
+   * Unit tests: for functional Units
+   * Try you hand at an integration test
+* Bonus: Using Logging
 
 #Learning Objectives Review
 * Get Set Up for JavaSE 6 Development
@@ -1003,7 +1023,7 @@ _reciept.txt_
 * Understand the following java topics:
  * Classes and Objects
  * Primitive Data Types
- * Arrays 
+ * Arrays
  * Collections
  * Loop Structures
  * Returning Values
@@ -1031,12 +1051,15 @@ _reciept.txt_
  * Code Coverage
 
 
-##Bonus Topics
+#Bonus Topics
 
 ##(Bonus)Connect to Oracle
 * [Maven?](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#1074971)
 * [System Dependency](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#9779295)
 * [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html)
+
+##(Bonus)Enumerations
+* [Enumerations](http://docs.oracle.com/javase/6/docs/api/java/util/StringTokenizer.html) (StringTokenizer)
 
 ##(Bonus)Annotations
 * [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java)
