@@ -3,24 +3,24 @@
 
 #Intro
 * About this Basics
-  * 5 Days - Intro to Java Programming
-  * 10am-6pm
-  * Lunch at 1:30
+ * 5 Days - Intro to Java Programming
+ * 10am-6pm
+ * Lunch at 1:30
 
 * About Me
 * About this Class
-  * Java is a vast ocean
-  * Learning how to find answers is key 
+ * Java is a vast ocean
+ * Learning how to find answers is key
 * Each Java Topic
-  * No Slides
-  * Chat and Code Demo - Ask Questions!
-  * Do - Pretend I'm the PdM
-  * Review Volunteer Together
-  * JUnit Tests where feasible 
-* Final Project (flexible) 
-* About the Book 
+ * No Slides
+ * Chat and Code Demo - Ask Questions!
+ * Do - Pretend I'm the PdM
+ * Review Volunteer Together
+ * JUnit Tests where feasible
+* Final Project (flexible)
+* About the Book
 * About You
-* Questions? 
+* Questions?
 
 
 #Learning Objectives
@@ -29,48 +29,48 @@
 * Know how to compile, run and debug Java applications
 * Know how to create an application from scratch
 * Understand the following java topics:
-  * Classes and Objects
-  * Primitive Data Types
-  * Arrays and Collections
-  * Loop Structures
-  * Returning Values
-  * Passing Arguments
-  * Branching Structures 
-  * Exception Handling
-  * Basic File Access
-  * Stream based IO
+ * Classes and Objects
+ * Primitive Data Types
+ * Arrays and Collections
+ * Loop Structures
+ * Returning Values
+ * Passing Arguments
+ * Branching Structures
+ * Exception Handling
+ * Basic File Access
+ * Stream based IO
 * Understand the following Object Oriented Concepts:
-  * Abstraction
-  * Encapsulation
-  * Constructors
-  * Static versus Instance
-  * Inheritance
-  * Polymorphism
+ * Abstraction
+ * Encapsulation
+ * Constructors
+ * Static versus Instance
+ * Inheritance
+ * Polymorphism
 * Understand how to use Eclipse IDE for Java
-  * Code Short-cuts 
-  * Formatting Rules
+ * Code Short-cuts
+ * Formatting Rules
 * Understand How To use JDBC to:
-  * Connect to a Database
-  * Query a Database 
+ * Connect to a Database
+ * Query a Database
 * Understand How To use JUnit 4:
-  * Test existing code
-  * Test First with TDD 
-  * Code Coverage
+ * Test existing code
+ * Test First with TDD
+ * Code Coverage
 
 
 #Set up for Java Development
 * Install the JavaSE (JDK 1.6 or 1.7)
-  * [Download](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
+ * [Download](http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR)
 
 * Install Eclipse for Java Developers
-  * [Download](https://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunar)
+ * [Download](https://eclipse.org/downloads/packages/eclipse-ide-java-developers/lunar)
 
 * Install Maven
-  * [Instructions](http://maven.apache.org/guides/getting-started/windows-prerequisites.html)
-  * [Download](http://maven.apache.org/download.cgi#Maven_3.2.2)
+ * [Instructions](http://maven.apache.org/guides/getting-started/windows-prerequisites.html)
+ * [Download](http://maven.apache.org/download.cgi#Maven_3.2.2)
 
 * Install GIT
-  * [Download](http://git-scm.com/download)
+ * [Download](http://git-scm.com/download)
 
 * Verify java installation
 
@@ -103,21 +103,21 @@ git version 2.0.0
 ```
 
 * Verify Eclipse Installation
-  * Start Eclipse
-  * Go to Preferences -> Java -> Installed JREs
-  * Verify that the installed JRE is show in the list 
+ * Start Eclipse
+ * Go to Preferences -> Java -> Installed JREs
+ * Verify that the installed JRE is show in the list
 
 
 #Java Development Skills
 * Explain the Java Development Workflow
-  * ``.java`` File
-  * ``javac``
-  * Compile-Time ``CLASSPATH``
-  * ``.class`` file 
-  * ``java``
-  * Run-Time ``CLASSPATH``
-  * Hello World!
-  
+ * ``.java`` File
+ * ``javac``
+ * Compile-Time ``CLASSPATH``
+ * ``.class`` file
+ * ``java``
+ * Run-Time ``CLASSPATH``
+ * Hello World!
+
 * [](http://www.oracle.com/technetwork/topics/newtojava/downloads/index.html)
 * Write Hello World java application with no tools (Requires: text editor)
 
@@ -145,7 +145,7 @@ vi src/HelloWorld.java
 * Compile your application (Requires: javac from the JDK) (javac -verbose HelloWorld.java)
 
 ```
-javac src/HelloWorld.java 
+javac src/HelloWorld.java
 ```
 * Run your Application (Requires: java from JRE)
 
@@ -155,22 +155,22 @@ java -cp ./src HelloWorld
 * ``-verbose`` option:
 
 ```
-javac -verbose src/HelloWorld.java 
+javac -verbose src/HelloWorld.java
 java -verbose -cp ./src HelloWorld
-``` 
+```
 
 * ``-d`` option
 
-* [Intro CLASS_PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html) 
+* [Intro CLASS_PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
 
 #Java Platform Basics
 * JDK - [Java Development Kit](http://en.wikipedia.org/wiki/Java_Development_Kit) (Tools)
 * JRE - Java Runtime Environment (JVM + Class Libraries)
-* JVM - Java Virtual Machine 
+* JVM - Java Virtual Machine
 
 #Java Build Tools - Maven
 * Generate a template application with Maven (App + AppTest)
-  * ``mvn archetype:generate`` 
+ * ``mvn archetype:generate``
 * Use Maven to Build and Package a Java Application
 * Use Maven to run JUnit Unit Tests for your code
 * Import a maven project into Eclipse (Requires: Maven Integration for Eclipse)
@@ -178,11 +178,11 @@ java -verbose -cp ./src HelloWorld
 #Java Language Skills
 ##Class Methods (Java Language)
 * Understand and use [Class Methods (static) esp. main]
-  * No instance needed - We'll get to Instance Methods later
-  * ``String[] args``
-  * ``System.out.println()``
-  * ``public static void`` - Access Modifiers
-  
+ * No instance needed - We'll get to Instance Methods later
+ * ``String[] args``
+ * ``System.out.println()``
+ * ``public static void`` - Access Modifiers
+
 ##Packages (Java Language)
 * Understand [Java Packages](http://docs.oracle.com/javase/tutorial/java/package/packages.html) ~ Namespace and Folder Name
 * __EXERCISE:__ Move your HelloWorld class to a package using eclipse
@@ -203,7 +203,7 @@ java -verbose -cp ./src HelloWorld
 * __EXERCISE:__ Create a new folder called ``datatypes`` and a main application class called ``DataTypeApp``. Put the ``DataTypeApp`` in an appropriate ``package``. In DataTypeApp.main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
 
 ##Expressions, Statements and Blocks (Java Language)
-* Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html) 
+* Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html)
 * Expression - evaluates to a value
 * Statement - (expression, declaration or control flow)
 * Blocks - a group of zero or more statements, hint at scope
@@ -212,16 +212,16 @@ java -verbose -cp ./src HelloWorld
 Eclipse will show warnings and errors as you type, pay attention to them to learn how to use these operators
 
 * The Arithmetic Operators
-* __EXERCISE:__ Create a new folder called ``operators`` with a class called ``OperatorsApp`` in an appropriate package. For each of the Arithmetic operators ``+``,``-``,``/``,``%``,``++``,``--`` write an example usage and print out the results. Ensure that your app describes the difference between prefix and postfix ``--/++``. 
+* __EXERCISE:__ Create a new folder called ``operators`` with a class called ``OperatorsApp`` in an appropriate package. For each of the Arithmetic operators ``+``,``-``,``/``,``%``,``++``,``--`` write an example usage and print out the results. Ensure that your app describes the difference between prefix and postfix ``--/++``.
 
 * The Equality and Relational Operators
 * __EXERCISE:__ Create a new app any way you wish. In the main method, write an example expression for each of these operators which prints something out:
-  * ==      equal to
-  * !=      not equal to
-  * &gt;       greater than
-  * &gt;=      greater than or equal to
-  * <       less than
-  * <=      less than or equal to
+ * ==      equal to
+ * !=      not equal to
+ * &gt;       greater than
+ * &gt;=      greater than or equal to
+ * <       less than
+ * <=      less than or equal to
 What data type do these expressions return?
 
 ## Comments (Java Language)
@@ -256,22 +256,22 @@ Simplest Control flow if-then
 * ``default``
 
 ###Exercise
-* __EXERCISE:__ Write an application called ``LuckyDay`` which randomly selects a number between 0 and 6 (inclusive) and uses a ``switch`` statement to print out a day of the week in the format "This week, 'Wednesday' is your lucky day!". Where the day of the week printed is determined by the random number (Sunday is 0..Saturday is 6) 
+* __EXERCISE:__ Write an application called ``LuckyDay`` which randomly selects a number between 0 and 6 (inclusive) and uses a ``switch`` statement to print out a day of the week in the format "This week, 'Wednesday' is your lucky day!". Where the day of the week printed is determined by the random number (Sunday is 0..Saturday is 6)
 
 ##Basic Arrays (Java Language)
 * Understand [Java Array Usage](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 * Allocate an array with the literal syntax
 * Assign and access individual elements in the array
 ```
-int[] anArray = { 
+int[] anArray = {
     100, 200, 300,
-    400, 500, 600, 
+    400, 500, 600,
     700, 800, 900, 1000
 };
 ```
 * ``array.length``
 * ``System.arraycopy()``
- 
+
 ###Exercise
 * __EXERCISE:__ Re-write the ``LuckyDay`` application to use an array
 
@@ -292,10 +292,8 @@ Enough hard coding! Let's read in some arguments
 ###Exercise
 * __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
 
-
-
 ##while (Control Flow)
-*[while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) 
+* [while / do-while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html)
 
 ###Exercise
 * __EXERCISE:__ Write an application called ``HighRoller`` which utilizes one of these loop types to count the number of dice rolls required to reach ``25``. Each dice roll is a random number between ``1`` and ``6`` inclusive. At the end, print out, the total score and how many rolls it took. If the player rolls exactly ``25`` then print out the special message ``YOU ARE A HIGH ROLLER!!!``
@@ -316,7 +314,7 @@ for(;;)
 
 ###Exercise
 * __EXERCISE:__ Write an application called ``RandomArrayer``. The application should generate a random number between ``10`` and ``20`` (inclusive). Then allocate a new array of ``int``s. The use a for loop to assign each ``int`` in the array to a random number. Use [java.util.Arrays.sort()](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#sort%28int[]%29) to sort the array of ``int``s in ascending order and then another for loop to print out the numbers to the console
-  
+
 ##for each (Control Flow)
 * [for each](http://docs.oracle.com/javase/6/docs/technotes/guides/language/foreach.html)
 
@@ -336,7 +334,7 @@ for(;;)
 
 #More Java Language
 ##Returning Values (Methods)
-* ``return`` 
+* ``return``
 * void
 * types
 * Recommendation: Single Return Statement is preferred
@@ -346,9 +344,9 @@ for(;;)
 
 ##Passing Parameters (Methods)
 * Understand argument passing and method invokation
-  * Everything is passed by value, the value passed is either a primitive data type or an __object reference__
-  * Objects themselves are always stored in the heap, and we only ever have a reference to that space
- 
+ * Everything is passed by value, the value passed is either a primitive data type or an __object reference__
+ * Objects themselves are always stored in the heap, and we only ever have a reference to that space
+
 ##Class Methods (Methods)
 * You don't need to create an instance to call ``Class`` (static) methods
 * The instance of the ``Class`` is created when the bytecode is loaded by the ``ClassLoader``
@@ -359,7 +357,7 @@ for(;;)
 * __EXERCISE:__ Replace the AppTest generated by the template with this AppTest Class to your Application. Try it out, by running the tests as a JUnit 4 Unit Test Case in eclipse. (The archetype template uses JUnit 3 syntax, so we are upgrading!)
 
 ```
-package com.skillbox.boxes.circles; 
+package com.skillbox.boxes.circles;
 // You'll need to change this package declaration, eclipse will help!
 
 import static org.junit.Assert.*;
@@ -399,7 +397,7 @@ Use Test Driven Development to help you with these refactoring tasks:
 #Self Study
 ##Java Koans (General)
 A Testy way to learn Java....
-* [Java Koans](https://github.com/matyb/java-koans)     
+* [Java Koans](https://github.com/matyb/java-koans)
 When you hit something we haven't covered we'll talk about it in class
 
 #More Java Platform
@@ -408,11 +406,11 @@ When you hit something we haven't covered we'll talk about it in class
 * [Java Platform Versions](http://javapapers.com/core-java/java-features-and-history/)
 * [JavaSE 6 Overview](http://docs.oracle.com/javase/6/docs/technotes/guides/)
 * We are only looking at a subset of JavaSE but you should be aware of:
-  * [JavaEE](http://docs.oracle.com/javaee/6/firstcup/doc/gcrkq.html)
-  * [JavaME vs Android API](http://en.wikipedia.org/wiki/Comparison_of_Java_and_Android_API)
-  * [JavaFX](http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html)
- 
-#Eclipse Skills 
+ * [JavaEE](http://docs.oracle.com/javaee/6/firstcup/doc/gcrkq.html)
+ * [JavaME vs Android API](http://en.wikipedia.org/wiki/Comparison_of_Java_and_Android_API)
+ * [JavaFX](http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html)
+
+#Eclipse Skills
 ##Using Eclipse Effectively (Tools)
 
 * Configure Project Settings
@@ -420,8 +418,8 @@ When you hit something we haven't covered we'll talk about it in class
 * Consistently Format Code
 * Clean up!
 * Refactor
-  * Get/Setter
-  * Extract...  
+ * Get/Setter
+ * Extract...
 * [Tips](ECLIPSE.md)
 
 ##Debugging (Tools)
@@ -433,14 +431,14 @@ When you hit something we haven't covered we'll talk about it in class
 
 ##Code Coverage (Tools)
 
-* Install [Eclemma](http://www.eclemma.org/) 
+* Install [Eclemma](http://www.eclemma.org/)
 * Run your tests with coverage as...
 
 ##Profiles (Tools)
 
-* Shared Java Formatting Profiles 
+* Shared Java Formatting Profiles
 * Always Format the same way to minimize conflicts
-  
+
 # More Java Platform Classes
 ##Numbers (Java Platform)
 * For the built in numeric primitive data types we have [wrapper types](http://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
@@ -452,17 +450,16 @@ When you hit something we haven't covered we'll talk about it in class
 ###Review
 * [Autoboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 
-   
 #Object Oriented Coding
 ##OO Principals in Java
 * Understand the following Object Oriented Concepts:
-  * Classes
-  * Objects
-  * Inheritance
-  * Abstraction and Encapsulation
-  * Constructors, ``new`` and ``super``
-  * Static versus Instance
-  * Polymorphism
+ * Classes
+ * Objects
+ * Inheritance
+ * Abstraction and Encapsulation
+ * Constructors, ``new`` and ``super``
+ * Static versus Instance
+ * Polymorphism
 ##OO Overview
 * [Overview](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
 [What Is an Object?](http://docs.oracle.com/javase/tutorial/java/concepts/object.html)
@@ -477,41 +474,41 @@ If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
 
 * [Overview](http://docs.oracle.com/javase/tutorial/java/javaOO/)
 * Class definitions define:
-  * How instances must be created and initialized (Constructors, or other creation pattern) 
-  * What instances can do - behaviour - (their interfaces, instance methods)
-  * How they do it - implementation
-  * What data they store internally - instance data
-  * Who can access what
-  * Any Class specific data, constants or behaviours (``static``)
+ * How instances must be created and initialized (Constructors, or other creation pattern)
+ * What instances can do - behaviour - (their interfaces, instance methods)
+ * How they do it - implementation
+ * What data they store internally - instance data
+ * Who can access what
+ * Any Class specific data, constants or behaviours (``static``)
 
 ##Inheritance and Classes
 ###Exercise
-* __EXERCISE:__ Group discussion, select and brainstorm on domain 
+* __EXERCISE:__ Group discussion, select and brainstorm on domain
 * __LIVE CODE:__ examples of``extends``, ``class``
 * __EXERCISE:__ Now on your own in groups of two. Pick a domain and make some notes:
-  * Describe Domain (package name)
-  * Find Classes (``class``)
-  * Find Inheritance (``extends``)
-  * Draft up classes on paper
+ * Describe Domain (package name)
+ * Find Classes (``class``)
+ * Find Inheritance (``extends``)
+ * Draft up classes on paper
 * __DISCUSSION:__ Review of examples
 
 
-##Writing Your Own Java Classes   
+##Writing Your Own Java Classes
 ##Class Definitions (Java Language)
 * One public class per .java file
 * Must Match path with package
 * Must Match Class name with Filename
 * Constructors
-  * ``new`` 
-  * ``super``
-  * ``this``
+ * ``new``
+ * ``super``
+ * ``this``
 * Review Class Methods and Class Variables
-  * ``static``
+ * ``static``
 * Instance Methods and Instance Variables
-  * non-``static``
-  
+ * non-``static``
+
  * __EXERCISE:__  Implement the basics of your classes from the previous exercise
- 
+
 
 ##Object Equality (Java Language)
 * [``equals``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals%28java.lang.Object%29) and [``hashCode``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode%28%29)
@@ -520,25 +517,25 @@ If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
 * __DISCUSSION:__ GregorianCalendar - Allows you to create dates and Calendar - Date Math
 * __DEMO:__ Eclipse Generators
 
-##Access Modifiers (Java Language)  
-* [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) 
+##Access Modifiers (Java Language)
+* [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
 * ``public``
-* ``private`` 
+* ``private``
 * 'package' - The default
 * ``protected``
 
 * __EXERCISE:__  Discuss with your partner the appropriate access modifiers for parts of your class system
-  
+
 ##More Inheritance in Java (Java Language)
 * Understand Class inheritance and how to implement it
-  * Overriding
-  * Abstract classes and methods
-  * Final (classes, methods, variables, parameters)
+ * Overriding
+ * Abstract classes and methods
+ * Final (classes, methods, variables, parameters)
 * Recommendation: use ``final`` where you don't intend a value to change and avoid coding errors
 
-##Interfaces in Java  
+##Interfaces in Java
 * Understand Interfaces and how to use them
-  * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html) 
+ * [http://docs.oracle.com/javase/tutorial/java/IandI/index.html](http://docs.oracle.com/javase/tutorial/java/IandI/index.html)
 * Understand Abstract Classes and how to define them
 * Interfaces are entirely abstract but can contain constants
 
@@ -548,38 +545,38 @@ When you turn the steering wheel, the front wheels turn, you don't care how it w
 * Abstraction (Interface / Observable Behaviour / Exposed)
 * Encapsulation (Implementation / Hidden)
 * 'The way you use it' is well defined
-  * ``interface`` or ``class`` definition
+ * ``interface`` or ``class`` definition
 * Clearly defined interfaces allow _Polymorphism..._
 
 ##Polymorphism
 When you rent a car, it doesn't matter what model it is, you can still drive it
 * [Polymorphism](http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html)
 * Share some common nature but differ in implementation or additional behaviours
-  * Interfaces with multiple implementations
-  * ``@Override``s of instance methods
-  * Implementations of ``abstract`` methods
+ * Interfaces with multiple implementations
+ * ``@Override``s of instance methods
+ * Implementations of ``abstract`` methods
 * [WikiPedia](http://en.wikipedia.org/wiki/Polymorphism_(computer_science))
-  
+
 ##The Java Collections Framework and Generics
 * [Collections Overview](http://docs.oracle.com/javase/tutorial/collections/)
 * Interfaces
-  * [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
-  * [List](http://docs.oracle.com/javase/6/docs/api/java/util/List.html)
-  * [Map](http://docs.oracle.com/javase/6/docs/api/java/util/Map.html)
-  * [Set](http://docs.oracle.com/javase/6/docs/api/java/util/Set.html)
+ * [Overview](http://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
+ * [List](http://docs.oracle.com/javase/6/docs/api/java/util/List.html)
+ * [Map](http://docs.oracle.com/javase/6/docs/api/java/util/Map.html)
+ * [Set](http://docs.oracle.com/javase/6/docs/api/java/util/Set.html)
 * Concrete Implementations (Many we'll only cover the basics)
-  * [ArrayList](http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html)  
-  * [HashMap](http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html)  
-  * [HashSet](http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html) 
-  * __NOTE:__ If you want to use your own classes as keys or in unique collections ``hashCode`` and ``equals`` will need to be implemented (later)
-* [Generics](http://docs.oracle.com/javase/tutorial/java/generics/) - you may have noticed something new: ``<E>``  
+ * [ArrayList](http://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html)
+ * [HashMap](http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html)
+ * [HashSet](http://docs.oracle.com/javase/6/docs/api/java/util/HashSet.html)
+ * __NOTE:__ If you want to use your own classes as keys or in unique collections ``hashCode`` and ``equals`` will need to be implemented (later)
+* [Generics](http://docs.oracle.com/javase/tutorial/java/generics/) - you may have noticed something new: ``<E>``
 * [generics_collections.html](https://thenewcircle.com/static/bookshelf/java_fundamentals_tutorial/generics_collections.html)
 
 * Additional Note: [unmodifiableCollection](http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29)
-  * ``UnsupportedOperationException``
+ * ``UnsupportedOperationException``
 
 ###Exercise
-* __EXERCISE:__ Group discussion on collections 
+* __EXERCISE:__ Group discussion on collections
 * __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
 
@@ -600,19 +597,19 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * ``Class.forName()`` -> ``Class``
 
 * __LIVE DEMO:__ Using ``String`` as an example
- 
+
 
 #More Java Language
 ##Exceptions (Java Language)
-* Understand Java Exceptions 
+* Understand Java Exceptions
 * Help keep code simple and readable
 * Invalid Parameters, unexpected conditions, things outside of your control
 * Not for control flow
 * Checked vs Unchecked
 * [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 * Understand How and When to Throw exceptions
-  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html) 
-  * Checked vs Unchecked Exceptions 
+ *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html)
+ * Checked vs Unchecked Exceptions
 
 
 ###Exercise
@@ -627,14 +624,14 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * __EXERCISE:__ Check File exists, list files in directory, check permissions, delete file
 
 #Stream Based IO
-##Streams (Java Platform) 
-* (NOT TO BE CONFUSED WITH Java8 Streams for Functional Programming) 
+##Streams (Java Platform)
+* (NOT TO BE CONFUSED WITH Java8 Streams for Functional Programming)
 * [Streams IO](http://docs.oracle.com/javase/tutorial/essential/io/streams.html)
-  * byte streams
-  * character streams
-  * Blocking
-  * Use ``try`` and ``finally`` to close streams when done
-  * Notices that the streams are declared and initialized to ``null`` outside of the ``try`` and ``null`` is tested in the ``finally`` block
+ * byte streams
+ * character streams
+ * Blocking
+ * Use ``try`` and ``finally`` to close streams when done
+ * Notices that the streams are declared and initialized to ``null`` outside of the ``try`` and ``null`` is tested in the ``finally`` block
 
 ##Canonical Example: File Byte Stream (Java Platform)
 
@@ -686,7 +683,7 @@ public class CopyFile {
       try {
          in = new FileReader("source.txt");
          out = new FileWriter("target.txt");
-         
+
          int c;
          while ((c = in.read()) != -1) {
             out.write(c);
@@ -723,8 +720,8 @@ public class CopyFile {
 
 * __EXERCISE:__ Use your file copy application as a basis for new utility function which takes a text file and converts all the uppercase letters to lowercase and vice versa. All other characters remain unchanged.
 * Recommendation: write a utility method which applies the transformation to a given string first, and test it using TestCases. Then use that method in your app.
-* @see ``Character.isUpperCase()``   
-   
+* @see ``Character.isUpperCase()``
+
 
 #More Java
 ##Sorting and Searching (Java Platform)
@@ -749,11 +746,11 @@ public class CopyFile {
 * __EXERCISE:__   Given this Interface:
 
 Save it as _IGenericStack.java_
-``` 
-interface GenericStack<T> { 
-  void push(T obj) throws StackFullException; 
-  T pop() throws StackEmptyException; 
-} 
+```
+interface GenericStack<T> {
+  void push(T obj) throws StackFullException;
+  T pop() throws StackEmptyException;
+}
 ```
 In separate files define both ``StackEmptyException`` and a working implementation of ``IGenericStack`` called ``GenericStack``. ``GenericStack`` should have a single constructor which takes an ``int`` parameter which is the size of the fixed array to be used to back up the Stack. We are looking for a _LIFO_ : _Last in First Out_ stack.
 Before you start coding your implementation, write a JUnit 4 TestCase called ``GenericStackTest`` which Test the behaviour.
@@ -762,8 +759,8 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 ##Enums
 * ``.values()`` ``for each``
 * ``switch``
-* ``toString`` 
-  
+* ``toString``
+
 ##Additional Topics
 * [Auto-boxing and Unboxing](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 * [Math](http://docs.oracle.com/javase/tutorial/java/data/beyondmath.html)
@@ -773,19 +770,19 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 #Developer Skills
 ##Advanced Debugging
 * Debug to a _remote_(local) application using Java Platform Debugger Architecture (JPDA) from Eclipse
-  * [agentlib options](http://docs.oracle.com/javase/6/docs/technotes/guides/jpda/conninv.html)
+ * [agentlib options](http://docs.oracle.com/javase/6/docs/technotes/guides/jpda/conninv.html)
 
 #JDBC
 ##JDBC Connections (Java Platform)
 * Know how to connect your application to a database with JDBC
-* 
-* Know how to execute SQL statements: 
-  * CREATE TABLE, SELECT, INSERT, UPDATE, DELETE, DROP TABLE
+*
+* Know how to execute SQL statements:
+ * CREATE TABLE, SELECT, INSERT, UPDATE, DELETE, DROP TABLE
 * autoCommit - Basic Transactions
 * close ``Connection`` when done (if you opened it)
-* [Batching Statements](http://viralpatel.net/blogs/batch-insert-in-java-jdbc/)  
+* [Batching Statements](http://viralpatel.net/blogs/batch-insert-in-java-jdbc/)
 
-  
+
 ##JDBC Project
 * A project which reads a CSV File from disk and imports some of the data into a database
 * [DataSource](http://docs.oracle.com/javase/6/docs/api/javax/sql/DataSource.html)
@@ -794,12 +791,12 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
 
 
-#Testing 
+#Testing
 ##JUnit
-* Know how to write JUnit test cases to Unit Test Your Code   
+* Know how to write JUnit test cases to Unit Test Your Code
 * [http://www.mkyong.com/tutorials/junit-tutorials/](http://www.mkyong.com/tutorials/junit-tutorials/)
-* Pick a Mock Framework  
-  * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html) 
+* Pick a Mock Framework
+ * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html)
 
 
 #Extras
@@ -867,12 +864,12 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 When you have completed all phases you will have a Java Application which performs these tasks (in order):
 * Loads _stock_level.csv_ into a inventory system, in a persistent database of your choice
 * The order is read from a JSON file (_order.json_)
-* An ``Order`` object from the read data 
+* An ``Order`` object from the read data
 * The ``OrderManager`` ``process``es the order as follows:
-  * Tests that the items are in stock in a database by calling the ``InventoryManager``'s ``stockLevel(productId)`` 
-  * If the stock on hand is >= the required quantity for the line item then
-    * Decrements the stock level by calling the ``InventoryManager``'s ``decrementStock(productId)`` 
-  * Otherwise it marks the ``LineItem`` as out_of_stock (all or nothing for each line item)
+ * Tests that the items are in stock in a database by calling the ``InventoryManager``'s ``stockLevel(productId)``
+ * If the stock on hand is >= the required quantity for the line item then
+   * Decrements the stock level by calling the ``InventoryManager``'s ``decrementStock(productId)``
+ * Otherwise it marks the ``LineItem`` as out_of_stock (all or nothing for each line item)
 * Once the order and all the line items have been processed:
 * The ``Order`` is passed to the ``ReceiptPrinter`` and a nicely formatted reciept is printed (_reciept.txt_)
 * Exports _stock_level_updated.csv_ to the file system with the updated stock levels read from the database
@@ -885,7 +882,7 @@ PRODUCT_ID,STOCK_LEVEL
 12,3
 14,2
 13,2
-```  
+```
 
 ##Sample Input
 _order.json_
@@ -916,69 +913,69 @@ _reciept.txt_
   Order Total: $899.00
   --------------
   Thank you for your business
- 
+
 ```
 
 * Expectations
-  * Create a populate a local database with data from a CSV file (_stock_level.csv_)
-  * Write Unit Tests for the components
-  * Package the Application into Executable Jar File format (Research Required)
-  * Takes two command line arguments
-    * orderfile - The file to read
-    * recieptfile - The file to write 
-  * Reads in _orderfile_ (_order.json_) JSON File (representing a customer order)
-    * Find and use an available Parser
-  * Creates Order Related Objects Based on the JSON File Contents
-    * Order ? and what else might you need?
-  * Writes out _receiptfile_ a nicely formatted receipt describing the order
-  * Has JUnit tests 
-     * Unit tests: for functional Units
-     * Try you hand at an integration test
-  * Bonus: Using Logging 
-     
-#Learning Objectives Review     
+ * Create a populate a local database with data from a CSV file (_stock_level.csv_)
+ * Write Unit Tests for the components
+ * Package the Application into Executable Jar File format (Research Required)
+ * Takes two command line arguments
+   * orderfile - The file to read
+   * recieptfile - The file to write
+ * Reads in _orderfile_ (_order.json_) JSON File (representing a customer order)
+   * Find and use an available Parser
+ * Creates Order Related Objects Based on the JSON File Contents
+   * Order ? and what else might you need?
+ * Writes out _receiptfile_ a nicely formatted receipt describing the order
+ * Has JUnit tests
+    * Unit tests: for functional Units
+    * Try you hand at an integration test
+ * Bonus: Using Logging
+
+#Learning Objectives Review
 * Get Set Up for JavaSE 6 Development
 * Know how to compile, run and debug Java applications
 * Know how to create an application from scratch
 * Understand the following java topics:
-  * Classes and Objects
-  * Primitive Data Types
-  * Arrays and Collections
-  * Loop Structures
-  * Returning Values
-  * Passing Arguments
-  * Branching Structures 
-  * Exception Handling
-  * Basic File Access
-  * Stream based IO
+ * Classes and Objects
+ * Primitive Data Types
+ * Arrays and Collections
+ * Loop Structures
+ * Returning Values
+ * Passing Arguments
+ * Branching Structures
+ * Exception Handling
+ * Basic File Access
+ * Stream based IO
 * Understand the following Object Oriented Concepts:
-  * Abstraction
-  * Encapsulation
-  * Constructors
-  * Static versus Instance
-  * Inheritance
-  * Polymorphism
+ * Abstraction
+ * Encapsulation
+ * Constructors
+ * Static versus Instance
+ * Inheritance
+ * Polymorphism
 * Understand how to use Eclipse IDE for Java
-  * Code Short-cuts 
-  * Formatting Rules
+ * Code Short-cuts
+ * Formatting Rules
 * Understand How To use JDBC to:
-  * Connect to a Database
-  * Query a Database 
+ * Connect to a Database
+ * Query a Database
 * Understand How To use JUnit 4:
-  * Test existing code
-  * Test First with TDD 
-  * Code Coverage
-     
+ * Test existing code
+ * Test First with TDD
+ * Code Coverage
+
 
 ##Bonus Topics
 
 ##(Bonus)Connect to Oracle
 * [Maven?](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#1074971)
 * [System Dependency](http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository#9779295)
-* [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html) 
+* [Get Drivers](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html)
 
 ##(Bonus)Annotations
-* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java) 
+* [Writing Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Command.java)
 * [Reading Annotations](https://code.google.com/p/cliche/source/browse/src/asg/cliche/Shell.java#176)
 
 ##(Bonus)Reading XML (SAX vs DOM)
@@ -1003,13 +1000,13 @@ _reciept.txt_
 
 ##(Bonus)Java Thread Locks
 * Java Processes
-  * ```jps```
+ * ```jps```
 * Java Thread Dump
-  * ```jstack```
+ * ```jstack```
 * JConsole
-  * ```jconsole```
-  * [JConsole](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html)
-  * Threads -> Detect Deadlock (com/skillbox/boxes/threads/LockerApp)
+ * ```jconsole```
+ * [JConsole](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html)
+ * Threads -> Detect Deadlock (com/skillbox/boxes/threads/LockerApp)
 
 ##(Bonus) Recursion
 * Rewrite the Fibonacci Exercise with recursion
@@ -1024,15 +1021,15 @@ _reciept.txt_
 
 ##(Bonus)Networking
 * [Java HTTP Networking](http://docs.oracle.com/javase/tutorial/networking/)
-  * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
+ * [java.net.HttpURLConnection](http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html)
 
 ##(Bonus)Web Service
 * [Stand-alone Web Service](http://www.ibm.com/developerworks/webservices/tutorials/ws-eclipse-javase1/ws-eclipse-javase1.html)
-  * [wsgen](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsgen.html) 
+ * [wsgen](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsgen.html)
 ##(Bonus)Web Client
 * [Stand-alone Web Client](http://www.ibm.com/developerworks/webservices/tutorials/ws-jse/index.html)
-  * [wsimport](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsimport.html) 
- 
+ * [wsimport](http://docs.oracle.com/javase/6/docs/technotes/tools/share/wsimport.html)
+
 ##(Bonus)JavaDoc
 * [Simple example](https://github.com/stujo/java_boxes/tree/master/docsample)
 
