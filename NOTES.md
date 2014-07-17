@@ -31,7 +31,8 @@
 * Understand the following java topics:
  * Classes and Objects
  * Primitive Data Types
- * Arrays and Collections
+ * Arrays 
+ * Collections
  * Loop Structures
  * Returning Values
  * Passing Arguments
@@ -107,6 +108,7 @@ git version 2.0.0
  * Go to Preferences -> Java -> Installed JREs
  * Verify that the installed JRE is show in the list
 
+* __CHECKPOINT:__ Get Set Up for JavaSE 6 Development
 
 #Java Development Skills
 * Explain the Java Development Workflow
@@ -163,6 +165,8 @@ java -verbose -cp ./src HelloWorld
 
 * [Intro CLASS_PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
 
+* __CHECKPOINT:__ Know how to create an application from scratch
+
 #Java Platform Basics
 * JDK - [Java Development Kit](http://en.wikipedia.org/wiki/Java_Development_Kit) (Tools)
 * JRE - Java Runtime Environment (JVM + Class Libraries)
@@ -201,6 +205,8 @@ java -verbose -cp ./src HelloWorld
 
 ###Exercise
 * __EXERCISE:__ Create a new folder called ``datatypes`` and a main application class called ``DataTypeApp``. Put the ``DataTypeApp`` in an appropriate ``package``. In DataTypeApp.main method, add a local variable of each of the built in data types and print out the values on separate lines, hint: ``%n`` translates to a new line
+
+* __CHECKPOINT:__ Primitive Data Types
 
 ##Expressions, Statements and Blocks (Java Language)
 * Understand and use [Expressions, Statements and Block](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html)
@@ -258,6 +264,8 @@ Simplest Control flow if-then
 ###Exercise
 * __EXERCISE:__ Write an application called ``LuckyDay`` which randomly selects a number between 0 and 6 (inclusive) and uses a ``switch`` statement to print out a day of the week in the format "This week, 'Wednesday' is your lucky day!". Where the day of the week printed is determined by the random number (Sunday is 0..Saturday is 6)
 
+* __CHECKPOINT:__ Branching Structures
+
 ##Basic Arrays (Java Language)
 * Understand [Java Array Usage](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 * Allocate an array with the literal syntax
@@ -289,7 +297,10 @@ Enough hard coding! Let's read in some arguments
 ###Exercise
 * __EXERCISE:__ Write a simple application in ``sorter`` which takes multiple command line arguments, puts them into an array, sorts the array and prints out the sorted array
 
-###Exercise
+* __CHECKPOINT:__ Arrays
+
+###Converting Values
+* __DEMO:__ Parsing Strings into primitive Types
 * __EXERCISE:__ Write a simple application in ``cladder`` which takes two command line arguments, checks that they are present, converts them into double values, multiplies them together and prints out the answer to two decimal places.
 
 ##while (Control Flow)
@@ -327,6 +338,8 @@ for(;;)
 ##continue in loops (Control Flow)
 * Shortcut next iteration
 
+* __CHECKPOINT:__ Loop Structures
+
 #Java Platform Classes
 ##Strings (Java Platform)
 * [String](http://docs.oracle.com/javase/tutorial/java/data/strings.html) is a special case object in that you can use a literal notation ``"my string contents"`` and get an object reference
@@ -339,6 +352,8 @@ for(;;)
 * types
 * Recommendation: Single Return Statement is preferred
 
+* __CHECKPOINT:__ Returning Values
+
 ##Method Names (Methods)
 * camelCase beginning with lowercase
 
@@ -346,6 +361,8 @@ for(;;)
 * Understand argument passing and method invokation
  * Everything is passed by value, the value passed is either a primitive data type or an __object reference__
  * Objects themselves are always stored in the heap, and we only ever have a reference to that space
+
+* __CHECKPOINT:__ Passing Arguments
 
 ##Class Methods (Methods)
 * You don't need to create an instance to call ``Class`` (static) methods
@@ -420,7 +437,8 @@ When you hit something we haven't covered we'll talk about it in class
 * Refactor
  * Get/Setter
  * Extract...
-* [Tips](ECLIPSE.md)
+* [Eclipse Tips](ECLIPSE.md)
+* __CHECKPOINT:__ Code Short-cuts
 
 ##Debugging (Tools)
 
@@ -429,15 +447,17 @@ When you hit something we haven't covered we'll talk about it in class
 * View and edit runtime variable values
 * Debug Your Tests
 
-##Code Coverage (Tools)
+* __CHECKPOINT:__ Know how to compile, run and debug Java applications
 
+##Code Coverage (Tools)
 * Install [Eclemma](http://www.eclemma.org/)
 * Run your tests with coverage as...
+* __CHECKPOINT:__ Code Coverage
 
 ##Profiles (Tools)
-
 * Shared Java Formatting Profiles
 * Always Format the same way to minimize conflicts
+* __CHECKPOINT:__ Formatting Rules
 
 # More Java Platform Classes
 ##Numbers (Java Platform)
@@ -502,20 +522,33 @@ If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
  * ``new``
  * ``super``
  * ``this``
+* Fields
+* Getters and Setters
 * Review Class Methods and Class Variables
  * ``static``
 * Instance Methods and Instance Variables
  * non-``static``
+ 
+* __EXERCISE:__  Implement the basics of your classes from the previous exercise. 
 
- * __EXERCISE:__  Implement the basics of your classes from the previous exercise
+* __CHECKPOINT:__ Constructors
 
 
 ##Object Equality (Java Language)
 * [``equals``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals%28java.lang.Object%29) and [``hashCode``](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode%28%29)
-* For this exercise [``GregorianCalendar.html#GregorianCalendar(int, int, int)``](http://docs.oracle.com/javase/6/docs/api/java/util/GregorianCalendar.html#GregorianCalendar%28int, int, int%29) might be handy
-* __EXERCISE:__ Write a Java class called ``Employee`` with fields for ``firstName``, ``lastName`` and ``dateOfBirth`` as ``java.util.Date`` . Override ``toString`` in a meaningful way. Now try and implement equals and hashCode according to the documentation provided
-* __DISCUSSION:__ GregorianCalendar - Allows you to create dates and Calendar - Date Math
+* __EXERCISE:__ Write a Java class called ``Employee`` with fields for ``firstName``, ``lastName`` and  . Override ``toString`` in a meaningful way. Now try and implement equals and hashCode according to the documentation provided
+
+* __EXERCISE:__ Write some ``@Test``s for your ``equals`` code
+
 * __DEMO:__ Eclipse Generators
+
+##Dates and Calendars (Java Platform)
+* For this exercise [``GregorianCalendar.html#GregorianCalendar(int, int, int)``](http://docs.oracle.com/javase/6/docs/api/java/util/GregorianCalendar.html#GregorianCalendar%28int, int, int%29) might be handy
+* __EXERCISE:__ Add ``dateOfBirth`` as ``java.util.Date`` to your Employee Class
+* __DISCUSSION:__ GregorianCalendar - Allows you to create dates and Calendar - Date Math
+* __EXERCISE:__ Run your tests again from the previous exercise
+
+* __CHECKPOINT:__ Classes and Objects
 
 ##Access Modifiers (Java Language)
 * [Access Modifiers](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
@@ -539,7 +572,7 @@ If ``Object`` instances are Cookies then ``Class``es are the cookie cutters
 * Understand Abstract Classes and how to define them
 * Interfaces are entirely abstract but can contain constants
 
-##Encapsulation and Interfaces
+##Abstraction, Encapsulation and Interfaces
 When you turn the steering wheel, the front wheels turn, you don't care how it works
 * Use [StringBuilder](http://docs.oracle.com/javase/6/docs/api/java/lang/StringBuilder.html) as an example
 * Abstraction (Interface / Observable Behaviour / Exposed)
@@ -547,6 +580,10 @@ When you turn the steering wheel, the front wheels turn, you don't care how it w
 * 'The way you use it' is well defined
  * ``interface`` or ``class`` definition
 * Clearly defined interfaces allow _Polymorphism..._
+
+* __CHECKPOINT:__ Abstraction
+* __CHECKPOINT:__ Encapsulation
+
 
 ##Polymorphism
 When you rent a car, it doesn't matter what model it is, you can still drive it
@@ -575,10 +612,13 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * Additional Note: [unmodifiableCollection](http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#unmodifiableCollection%28java.util.Collection%29)
  * ``UnsupportedOperationException``
 
+* __CHECKPOINT:__ Polymorphism
+
 ###Exercise
 * __EXERCISE:__ Group discussion on collections
 * __EXERCISE:__ Write a java method which generates an ArrayList<Integer> of the Fibonacci series numbers starting with 0 and 1, up to and including the first value which exceeds ``limit`` where ``limit`` is a parameter. Recommendation use __TDD__ and if the problem is unclear, ask your instructor to clarify
 
+* __CHECKPOINT:__ Collections
 
 ##Object Basics (Java Objects)
 * Every class extends ``Object``
@@ -596,7 +636,16 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * ``getClassLoader()``
 * ``Class.forName()`` -> ``Class``
 
-* __LIVE DEMO:__ Using ``String`` as an example
+* __LIVE DEMO:__ Using ``String.getClass`` as an example
+
+##More Class Implementation (Java Objects)
+* Constructors Calling Constructors
+* __CHECKPOINT:__ Constructors
+* Inheritance Review
+* Method Overloading 
+* __CHECKPOINT:__ Inheritance
+* Static vs Instance Review
+* __CHECKPOINT:__ Static versus Instance
 
 
 #More Java Language
@@ -609,12 +658,16 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 * [How to handle Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html)
 * Understand How and When to Throw exceptions
  *[Throwing Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html)
+* Declaring Exceptions
  * Checked vs Unchecked Exceptions
-
+* Exception Type Hierarchy
+  *  __TODO__ 
 
 ###Exercise
 * __EXERCISE:__ Catch Exception - Create and catch an [``ArrayIndexOutOfBoundsException.html``](http://docs.oracle.com/javase/6/docs/api/java/lang/ArrayIndexOutOfBoundsException.html)
 * __EXERCISE:__ Throw Exception - Example Check for null and throw a NullPointerException, document it
+
+* __CHECKPOINT:__ Exception Handling
 
 #Files
 ##Files (JavaSE6 Platform)
@@ -622,6 +675,8 @@ When you rent a car, it doesn't matter what model it is, you can still drive it
 
 ###Exercise
 * __EXERCISE:__ Check File exists, list files in directory, check permissions, delete file
+
+* __CHECKPOINT:__ Basic File Access
 
 #Stream Based IO
 ##Streams (Java Platform)
@@ -722,6 +777,7 @@ public class CopyFile {
 * Recommendation: write a utility method which applies the transformation to a given string first, and test it using TestCases. Then use that method in your app.
 * @see ``Character.isUpperCase()``
 
+* __CHECKPOINT:__ Stream based IO
 
 #More Java
 ##Sorting and Searching (Java Platform)
@@ -790,6 +846,8 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * [OpenCSV](http://viralpatel.net/blogs/java-read-write-csv-file/)
 * [Via Maven](http://mvnrepository.com/artifact/net.sf.opencsv/opencsv/2.3)
 
+* __CHECKPOINT:__ Connect to a Database
+* __CHECKPOINT:__ Query a Database
 
 #Testing
 ##JUnit
@@ -798,6 +856,8 @@ Use ``@Test(expected = StackEmptyException.class)`` to annotate some of your tes
 * Pick a Mock Framework
  * [Mockito](http://www.vogella.com/tutorials/Mockito/article.html)
 
+* __CHECKPOINT:__ Test existing code
+* __CHECKPOINT:__ Test First with TDD
 
 #Extras
 ##CSV Parsing
@@ -940,7 +1000,8 @@ _reciept.txt_
 * Understand the following java topics:
  * Classes and Objects
  * Primitive Data Types
- * Arrays and Collections
+ * Arrays 
+ * Collections
  * Loop Structures
  * Returning Values
  * Passing Arguments
